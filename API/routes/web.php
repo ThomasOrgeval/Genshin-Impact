@@ -16,3 +16,15 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+$router->group(['prefix' => 'api'], function () use ($router) {
+    $router->get('characters',  ['uses' => 'CharacterController@showAllChars']);
+
+    $router->get('character/{id}', ['uses' => 'CharacterController@showOneChar']);
+
+    $router->post('character', ['uses' => 'CharacterController@create']);
+
+    $router->delete('character/{id}', ['uses' => 'CharacterController@delete']);
+
+    $router->put('character/{id}', ['uses' => 'CharacterController@update']);
+});
