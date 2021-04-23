@@ -113,6 +113,14 @@
       <excludeFolder url="file://$MODULE_DIR$/API/vendor/nesbot/carbon" />
       <excludeFolder url="file://$MODULE_DIR$/API/vendor/illuminate/macroable" />
       <excludeFolder url="file://$MODULE_DIR$/API/vendor/psr/simple-cache" />
+      <excludeFolder url="file://$MODULE_DIR$/API/vendor/auth0/php-jwt" />
+      <excludeFolder url="file://$MODULE_DIR$/API/vendor/auth0/auth0-php" />
+      <excludeFolder url="file://$MODULE_DIR$/API/vendor/ralouphie/getallheaders" />
+      <excludeFolder url="file://$MODULE_DIR$/API/vendor/psr/http-client" />
+      <excludeFolder url="file://$MODULE_DIR$/API/vendor/psr/http-message" />
+      <excludeFolder url="file://$MODULE_DIR$/API/vendor/guzzlehttp/promises" />
+      <excludeFolder url="file://$MODULE_DIR$/API/vendor/guzzlehttp/guzzle" />
+      <excludeFolder url="file://$MODULE_DIR$/API/vendor/guzzlehttp/psr7" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
