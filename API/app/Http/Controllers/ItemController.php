@@ -20,6 +20,10 @@ class ItemController extends Controller
 
     public function create(Request $request)
     {
+        $this->validate($request, [
+            'label' => 'required|unique:items',
+        ]);
+
         $Item = Item::create($request->all());
 
         return response()->json($Item, 201);
