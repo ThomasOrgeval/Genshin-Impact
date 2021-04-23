@@ -20,6 +20,19 @@ class CharacterController extends Controller
 
     public function create(Request $request)
     {
+        $this->validate($request, [
+            'label' => 'required|unique:characters',
+            'element' => 'required|integer',
+            'weapon' => 'required|integer',
+            'rarity' => 'required|integer',
+            'lvl_up_material1' => 'integer',
+            'lvl_up_material2' => 'integer',
+            'lvl_up_material3' => 'integer',
+            'talent_up_material1' => 'integer',
+            'talent_up_material2' => 'integer',
+            'talent_up_material3' => 'integer',
+        ]);
+
         $Character = Character::create($request->all());
 
         return response()->json($Character, 201);
