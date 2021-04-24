@@ -2,10 +2,11 @@ $(document).ready(function ($) {
     if ($('#characters').length) {
         axios({
             method: 'get',
-            url: 'https://genshin-api.thomasorgeval.fr/api/characters',
-            headers: { }
+            url: 'https://genshin-api.thomasorgeval.fr/api/characters'
         }).then(function (response) {
-            console.log(JSON.stringify(response.data));
+            response.data.forEach(function (data) {
+                $('#characters').load('https://genshin.thomasorgeval.fr/resources/templates/character.html');
+            });
         }).catch(function (error) {
             console.log(error);
         });
