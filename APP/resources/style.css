@@ -3,6 +3,11 @@
     margin-bottom: 22px;
 }
 
+.element {
+    width: 28px;
+    height: 28px;
+}
+
 @media (max-width: 992px) {
     #content {
         margin-top: 67px;
