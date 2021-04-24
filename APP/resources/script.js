@@ -63,7 +63,7 @@ $(document).ready(function ($) {
             url: 'https://genshin-api.thomasorgeval.fr/api/characters'
         }).then(function (response) {
             response.data.forEach(function (data) {
-                if (data.label === $('#character div').attr('id')) {
+                if (slug(data.label) === $('#character div').attr('id')) {
                     Promise.all([getIcon('item', data.lvl_up_material1), getIcon('item', data.lvl_up_material2),
                         getIcon('item', data.lvl_up_material3), getIcon('item', data.talent_up_material1),
                         getIcon('item', data.talent_up_material2), getIcon('item', data.talent_up_material3)]).then(function (results) {
