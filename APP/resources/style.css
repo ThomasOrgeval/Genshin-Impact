@@ -1,9 +1,11 @@
 #content {
-    margin-top: 58px;
+    margin-top: 80px;
+    margin-bottom: 22px;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 992px) {
     #content {
-        margin-top: 45px;
+        margin-top: 67px;
+        margin-bottom: 9px;
     }
 }
