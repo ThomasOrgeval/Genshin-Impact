@@ -24,33 +24,77 @@ ob_start(); ?>
 
             <div class="card bg-white shadow">
                 <div class="m-2 mx-lg-4">
-                    <div>
-                        <h4>Select level:</h4>
-                    </div>
-                    <div class="row row-cols-2">
-                        <div class="form-outline">
-                            <select class="form-select" aria-label="Default select example">
-                                <option value="1" selected>One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                            </select>
-                        </div>
-                        <div class="form-outline">
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected>Open this select menu</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                            </select>
-                        </div>
-                    </div>
                     <div class="tab-content" id="ex1-content">
                         <div class="tab-pane fade show active" id="ex1-pills-1" role="tabpanel"
                              aria-labelledby="ex1-tab-1">
+                            <div>
+                                <h4>Select level of character:</h4>
+                            </div>
+                            <div class="row row-cols-2">
+                                <div class="form-outline">
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option value="1" selected>Level 0</option>
+                                        <option value="2">Level 20+</option>
+                                        <option value="3">Level 40+</option>
+                                        <option value="4">Level 50+</option>
+                                        <option value="5">Level 60+</option>
+                                        <option value="6">Level 70+</option>
+                                        <option value="7">Level 80+</option>
+                                    </select>
+                                </div>
+                                <div class="form-outline">
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option value="1">Level 20</option>
+                                        <option value="2">Level 40</option>
+                                        <option value="3">Level 50</option>
+                                        <option value="4">Level 60</option>
+                                        <option value="5">Level 70</option>
+                                        <option value="6">Level 80</option>
+                                        <option value="7" selected>Level 90</option>
+                                    </select>
+                                </div>
+                            </div>
+
                             <div id="ascension"></div>
+
                         </div>
                         <div class="tab-pane fade" id="ex1-pills-2" role="tabpanel" aria-labelledby="ex1-tab-2">
+                            <div>
+                                <h4>Select level of talents:</h4>
+                            </div>
+                            <div class="row row-cols-2">
+                                <div class="form-outline">
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option value="1" selected>Level 1</option>
+                                        <option value="2">Level 2</option>
+                                        <option value="3">Level 3</option>
+                                        <option value="4">Level 4</option>
+                                        <option value="5">Level 5</option>
+                                        <option value="6">Level 6</option>
+                                        <option value="7">Level 7</option>
+                                        <option value="8">Level 8</option>
+                                        <option value="9">Level 9</option>
+                                        <option value="10">Level 10</option>
+                                    </select>
+                                </div>
+                                <div class="form-outline">
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option value="1">Level 1</option>
+                                        <option value="2">Level 2</option>
+                                        <option value="3">Level 3</option>
+                                        <option value="4">Level 4</option>
+                                        <option value="5">Level 5</option>
+                                        <option value="6">Level 6</option>
+                                        <option value="7">Level 7</option>
+                                        <option value="8">Level 8</option>
+                                        <option value="9">Level 9</option>
+                                        <option value="10" selected>Level 10</option>
+                                    </select>
+                                </div>
+                            </div>
+
                             <div id="talent"></div>
+
                         </div>
                     </div>
                 </div>
