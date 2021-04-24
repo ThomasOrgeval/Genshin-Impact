@@ -7,7 +7,8 @@ ob_start(); ?>
                  style="background-image: url('resources/images/characters/<?= $_GET['label'] ?>');">
                 <ul class="nav nav-pills flex-column flex-lg-row mb-3 col-6" id="ex1" role="tablist">
                     <li class="nav-item" role="presentation">
-                        <a class="nav-link active" id="ex1-tab-1" data-mdb-toggle="pill" href="#ex1-pills-1" role="tab"
+                        <a class="nav-link active" id="ex1-tab-1" data-mdb-toggle="pill" href="#ex1-pills-1"
+                           role="tab"
                            aria-controls="ex1-pills-1" aria-selected="true">
                             Level Up
                         </a>
@@ -22,12 +23,35 @@ ob_start(); ?>
             </div>
 
             <div class="card bg-white shadow">
-                <div class="tab-content" id="ex1-content">
-                    <div class="tab-pane fade show active" id="ex1-pills-1" role="tabpanel" aria-labelledby="ex1-tab-1">
-                        <div id="ascension"></div>
+                <div class="m-2 mx-lg-4">
+                    <div>
+                        <h4>Select level:</h4>
                     </div>
-                    <div class="tab-pane fade" id="ex1-pills-2" role="tabpanel" aria-labelledby="ex1-tab-2">
-                        <div id="talent"></div>
+                    <div class="row row-cols-2">
+                        <div class="form-outline">
+                            <select class="form-select" aria-label="Default select example">
+                                <option value="1" selected>One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </div>
+                        <div class="form-outline">
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>Open this select menu</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="tab-content" id="ex1-content">
+                        <div class="tab-pane fade show active" id="ex1-pills-1" role="tabpanel"
+                             aria-labelledby="ex1-tab-1">
+                            <div id="ascension"></div>
+                        </div>
+                        <div class="tab-pane fade" id="ex1-pills-2" role="tabpanel" aria-labelledby="ex1-tab-2">
+                            <div id="talent"></div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -68,21 +68,26 @@ $(document).ready(function ($) {
                         getIcon('item', data.lvl_up_material3), getIcon('item', data.talent_up_material1),
                         getIcon('item', data.talent_up_material2), getIcon('item', data.talent_up_material3)]).then(function (results) {
 
-                        for (let i = 0; i < 3; i++) {
-                            if (i !== 0) $('#ascension').append('<hr class="my-2">');
-                            for (let j = 1; j <= results[i].rarity_max; j++) {
-                                $('#ascension').append('<img class="item" src="./resources/images/items/' + slug(results[i].label) + j + '.png" alt="lvl_up_material1">');
-
+                        $.get(
+                            './resources/templates/item.html'
+                        ).done(function (html) {
+                            for (let i = 0; i < 3; i++) {
+                                if (i !== 0) {
+                                    $('#ascension').append('<hr class="my-2">');
+                                    $('#talent').append('<hr class="my-2">');
+                                }
+                                for (let j = 1; j <= results[i].rarity_max; j++) {
+                                    $('#ascension').append(html)
+                                        .find('.div-item:last').append('<img class="item-char" src="./resources/images/items/' + slug(results[i].label) + j + '.png" alt="lvl_up_material1">');
+                                    $('#ascension').find('.item-label:last').html(results[i + 3].label + ' ' + j);
+                                }
+                                for (let j = 1; j <= results[i + 3].rarity_max; j++) {
+                                    $('#talent').append(html)
+                                        .find('.div-item:last').append('<img class="item-char" src="./resources/images/items/' + slug(results[i + 3].label) + j + '.png" alt="lvl_up_talent1">');
+                                    $('#talent').find('.item-label:last').html(results[i + 3].label + ' ' + j);
+                                }
                             }
-                        }
-
-                        for (let i = 3; i < 6; i++) {
-                            if (i !== 3) $('#talent').append('<hr class="my-2">');
-                            for (let j = 1; j <= results[i].rarity_max; j++) {
-                                $('#talent').append('<img class="item" src="./resources/images/items/' + slug(results[i].label) + j + '.png" alt="lvl_up_talent1">');
-
-                            }
-                        }
+                        });
                     });
                 }
             });
