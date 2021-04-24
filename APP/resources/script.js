@@ -1,5 +1,5 @@
 function slug(text) {
-    return text.replace(' ', '-');
+    return text.replaceAll(' ', '-');
 }
 
 function getIcon(type, id) {
