@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+    <?php if ($_SERVER['HTTP_HOST'] === 'localhost') : ?>
+        <base href="/Genshin-impact/APP/">
+    <?php else :
+        define('BASE_URL', 'https://genshin.thomasorgeval.fr/'); ?>
+        <base href="<?= BASE_URL ?>">
+    <?php endif; ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Genshin Impact API</title>
+    <title><?= $title ?? 'Genshin Impact API' ?></title>
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -21,7 +27,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
     <div class="container-fluid">
         <!-- Navbar brand -->
-        <a class="navbar-brand" href="https://genshin.thomasorgeval.fr">
+        <a class="navbar-brand" href="">
             <img src="resources/images/logo.png" height="22" alt="logo" loading="lazy" style="margin-top: -3px;" />
         </a>
         <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01"
@@ -51,7 +57,7 @@
 </nav>
 
 <div id="content" class="container">
-    <div id="characters" class="row row-cols-xxl-4 row-cols-xl-3 row-cols-md-2 row-cols-1"></div>
+    <?= $content ?>
 </div>
 </body>
 

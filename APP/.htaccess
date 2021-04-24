@@ -1,6 +1,7 @@
-Header add Access-Control-Allow-Origin "*"
-Header add Access-Control-Allow-Headers "origin, x-requested-with, content-type"
-Header add Access-Control-Allow-Methods "PUT, GET, POST, DELETE, OPTIONS"
+<Files .htaccess>
+    Order allow,deny
+    Deny from all
+</Files>
 
 Options -Indexes
 RewriteEngine on
@@ -9,3 +10,6 @@ Options +FollowSymlinks
 RewriteCond %{HTTP_HOST} ^genshin.thomasorgeval\.fr [NC]
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI}
+
+RewriteRule accueil$ index.php
+RewriteRule character/([a-zA-Z0-9-]+)$ index.php?p=character&label=$1
