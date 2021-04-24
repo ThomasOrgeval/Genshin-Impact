@@ -32,14 +32,15 @@ $(document).ready(function ($) {
                         $(id).find('.element').attr('src', 'https://genshin.thomasorgeval.fr/resources/images/elements/' + slug(results[0].label) + '.png');
 
                         // Reprise des matériaux d'amélioration du character
-                        $(id).find('.card-text').append('<img src="https://genshin.thomasorgeval.fr/resources/images/items/' + slug(results[1].label) + '.png" alt="lvl_up_material1">');
-                        $(id).find('.card-text').append('<img src="https://genshin.thomasorgeval.fr/resources/images/items/' + slug(results[2].label) + '.png" alt="lvl_up_material2">');
-                        $(id).find('.card-text').append('<img src="https://genshin.thomasorgeval.fr/resources/images/items/' + slug(results[3].label) + '.png" alt="lvl_up_material3">');
+                        $(id).find('.card-text').append('<img class="item" src="https://genshin.thomasorgeval.fr/resources/images/items/' + slug(results[1].label) + '.png" alt="lvl_up_material1">');
+                        $(id).find('.card-text').append('<img class="item" src="https://genshin.thomasorgeval.fr/resources/images/items/' + slug(results[2].label) + '.png" alt="lvl_up_material2">');
+                        $(id).find('.card-text').append('<img class="item" src="https://genshin.thomasorgeval.fr/resources/images/items/' + slug(results[3].label) + '.png" alt="lvl_up_material3">');
+                        $(id).find('.card-text').append('<span class="text-black">&#124;</span>');
 
                         // Reprise de talents du character
-                        $(id).find('.card-text').append('<img src="https://genshin.thomasorgeval.fr/resources/images/items/' + slug(results[4].label) + '.png" alt="talent_up_material1">');
-                        $(id).find('.card-text').append('<img src="https://genshin.thomasorgeval.fr/resources/images/items/' + slug(results[5].label) + '.png" alt="talent_up_material2">');
-                        $(id).find('.card-text').append('<img src="https://genshin.thomasorgeval.fr/resources/images/items/' + slug(results[6].label) + '.png" alt="talent_up_material3">');
+                        $(id).find('.card-text').append('<img class="item" src="https://genshin.thomasorgeval.fr/resources/images/items/' + slug(results[4].label) + '.png" alt="talent_up_material1">');
+                        $(id).find('.card-text').append('<img class="item" src="https://genshin.thomasorgeval.fr/resources/images/items/' + slug(results[5].label) + '.png" alt="talent_up_material2">');
+                        $(id).find('.card-text').append('<img class="item" src="https://genshin.thomasorgeval.fr/resources/images/items/' + slug(results[6].label) + '.png" alt="talent_up_material3">');
                     });
                 });
             });

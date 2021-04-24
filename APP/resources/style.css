@@ -8,6 +8,11 @@
     height: 28px;
 }
 
+.item {
+    width: 28px;
+    height: 28px;
+}
+
 @media (max-width: 992px) {
     #content {
         margin-top: 67px;
