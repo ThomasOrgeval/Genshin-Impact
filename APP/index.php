@@ -10,6 +10,12 @@ try {
             case 'accueil':
                 accueil();
                 break;
+            case 'character':
+                character();
+                break;
+            case 'resources':
+                resources();
+                break;
         }
     } else accueil();
 } catch (Exception $e) {

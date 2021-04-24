@@ -24,4 +24,8 @@
         margin-top: 67px;
         margin-bottom: 9px;
     }
+
+    .p-lg-6 {
+        padding: 4.5rem !important
+    }
 }
