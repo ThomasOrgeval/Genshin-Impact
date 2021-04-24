@@ -121,4 +121,15 @@ $(document).ready(function ($) {
             console.log(error);
         });
     }
+
+    if ($('#resources').length) {
+        axios({
+            method: 'get',
+            url: 'https://genshin-api.thomasorgeval.fr/api/items/sort'
+        }).then(function (response) {
+
+        }).catch(function (error) {
+            console.log(error);
+        });
+    }
 });

@@ -13,6 +13,10 @@ class ItemController extends Controller
         return response()->json(Item::all());
     }
 
+    public function selectSort() {
+        return response()->json(Item::all()->sortBy('type'));
+    }
+
     public function select($id)
     {
         return response()->json(Item::find($id));

@@ -25,6 +25,7 @@ $router->group(['prefix' => 'api'], function () use ($router) {
     $router->put('character/{id}', ['uses' => 'CharacterController@update']);
 
     $router->get('items',  ['uses' => 'ItemController@selectAll']);
+    $router->get('items/sort',  ['uses' => 'ItemController@selectSort']);
     $router->get('item/{id}', ['uses' => 'ItemController@select']);
     $router->post('item', ['uses' => 'ItemController@create']);
     $router->delete('item/{id}', ['uses' => 'ItemController@delete']);
