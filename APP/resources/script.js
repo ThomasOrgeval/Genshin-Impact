@@ -69,7 +69,7 @@ $(document).ready(function ($) {
                         getIcon('item', data.talent_up_material2), getIcon('item', data.talent_up_material3)]).then(function (results) {
 
                         for (let i = 0; i < 3; i++) {
-                            if (i !== 0) $('#ascension').append('<hr class="my-2">')
+                            if (i !== 0) $('#ascension').append('<hr class="my-2">');
                             for (let j = 1; j <= results[i].rarity_max; j++) {
                                 $('#ascension').append('<img class="item" src="./resources/images/items/' + slug(results[i].label) + j + '.png" alt="lvl_up_material1">');
 
@@ -77,7 +77,7 @@ $(document).ready(function ($) {
                         }
 
                         for (let i = 3; i < 6; i++) {
-                            if (i !== 3) $('#talent').append('<hr class="my-2">')
+                            if (i !== 3) $('#talent').append('<hr class="my-2">');
                             for (let j = 1; j <= results[i].rarity_max; j++) {
                                 $('#talent').append('<img class="item" src="./resources/images/items/' + slug(results[i].label) + j + '.png" alt="lvl_up_talent1">');
 
