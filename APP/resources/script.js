@@ -3,16 +3,7 @@ function slug(text) {
 }
 
 function getIcon(type, id) {
-    axios({
-        method: 'get',
-        url: 'https://genshin-api.thomasorgeval.fr/api/' + type + '/' + id
-    }).then(function (response) {
-        console.log(response.data);
-        return 'https://genshin.thomasorgeval.fr/resources/images/' + type + '/' + slug(response.data.label) + '.png';
-    }).catch(function (error) {
-        console.log(error);
-    });
-    return null;
+    return axios.get('https://genshin-api.thomasorgeval.fr/api/' + type + '/' + id).then(response => response.data);
 }
 
 $(document).ready(function ($) {
@@ -33,7 +24,11 @@ $(document).ready(function ($) {
                     // Reprise de l'image du character
                     $(id).find('img.img-fluid').attr('src', 'https://genshin.thomasorgeval.fr/resources/images/characters/' + slug(data.label) + '.png');
                     // Reprise de l'icone de l'élément du character
-                    $(id).find('.row-cols-2 img').attr('src', getIcon('elements', data.element))
+                    Promise.all([getIcon('element', data.element)]).then(function (results) {
+                        const acct = results[0];
+                        console.log(acct);
+                        $(id).find('img.element').attr('src', 'https://genshin.thomasorgeval.fr/resources/images/elements/' + slug(acct.label) + '.png');
+                    });
                     // Reprise des matériaux d'amélioration du character
                     $(id).find('p.card-text').html(data.lvl_up_material1 + ' ' + data.lvl_up_material2 + ' ' + data.lvl_up_material3);
                     // Reprise de talents du character
