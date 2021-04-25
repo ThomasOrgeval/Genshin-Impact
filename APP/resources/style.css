@@ -35,6 +35,12 @@
     height: 32px;
 }
 
+@media (max-width: 1360px) {
+    .item-list-15 {
+        grid-template-columns: repeat(10, 1fr);
+    }
+}
+
 @media (max-width: 992px) {
     #content {
         margin-top: 67px;

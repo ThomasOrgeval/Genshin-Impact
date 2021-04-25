@@ -7,7 +7,7 @@ function getIcon(type, id) {
 }
 
 $(document).bind('DOMSubtreeModified', function () {
-    $('.form-control').change(function(){
+    $('.form-control').change(function () {
         Cookies.set($(this).attr('id'), $(this).val());
     });
 });
@@ -82,17 +82,17 @@ $(document).ready(function ($) {
                                     $('#ascension').append(html)
                                         .find('.div-item:last').append('<img class="item-char" src="./resources/images/items/' + slug(results[i].label) + j + '.png" alt="lvl_up_material1">');
                                     $('#ascension').find('.item-label:last').html(results[i].label + ' ' + j);
-                                    $('#ascension').find('.item-required:last input').attr('id', 'requiredItem' + results[i].id + '_' + results[i + 3].rarity_max);
-                                    $('#ascension').find('.item-have:last input').attr('id', 'item' + results[i].id + '_' + results[i].rarity_max)
-                                        .attr('value', Cookies.get('item' + results[i].id + '_' + results[i].rarity_max));
+                                    $('#ascension').find('.item-required:last input').attr('id', 'requiredItem' + results[i].id + '_' + j);
+                                    $('#ascension').find('.item-have:last input').attr('id', 'item' + results[i].id + '_' + j)
+                                        .attr('value', Cookies.get('item' + results[i].id + '_' + j));
                                 }
                                 for (let j = 1; j <= results[i + 3].rarity_max; j++) {
                                     $('#talent').append(html)
                                         .find('.div-item:last').append('<img class="item-char" src="./resources/images/items/' + slug(results[i + 3].label) + j + '.png" alt="lvl_up_talent1">');
                                     $('#talent').find('.item-label:last').html(results[i + 3].label + ' ' + j);
-                                    $('#talent').find('.item-required:last input').attr('id', 'requiredItem' + results[i + 3].id + '_' + results[i + 3].rarity_max);
-                                    $('#talent').find('.item-have:last input').attr('id', 'item' + results[i + 3].id + '_' + results[i + 3].rarity_max)
-                                        .attr('value', Cookies.get('item' + results[i + 3].id + '_' + results[i + 3].rarity_max));
+                                    $('#talent').find('.item-required:last input').attr('id', 'requiredItem' + results[i + 3].id + '_' + j);
+                                    $('#talent').find('.item-have:last input').attr('id', 'item' + results[i + 3].id + '_' + j)
+                                        .attr('value', Cookies.get('item' + results[i + 3].id + '_' + j));
                                 }
                                 $('#ascension').append('<hr class="my-2">');
                                 $('#talent').append('<hr class="my-2">');
@@ -140,25 +140,28 @@ $(document).ready(function ($) {
                 $.get(
                     './resources/templates/items.html'
                 ).done(function (html) {
-                    if ($('#item-list' + data.type).length === 0) {
-                        $('#resources').append(html)
-                            .find('.item-list-15:last').attr('id', 'item-list' + data.type).append('<div class="text-center">' +
-                            '<img class="item-item" src="./resources/images/items/' + slug(data.label) + data.rarity_max + '.png" alt="item' + data.id + '">' +
-                            '<div class="form-outline">' +
-                            '<input id="item' + data.id + '_' + data.rarity_max + '" class="form-control text-center" ' +
-                            'type="number" value="' + Cookies.get('item' + data.id + '_' + data.rarity_max) + '">' +
-                            '<label for="item' + data.id + '_' + data.rarity_max + '" class="form-label"></label>' +
-                            '</div>' +
-                            '</div>');
-                    } else {
-                        $('#item-list' + data.type).append('<div class="text-center">' +
-                            '<img class="item-item" src="./resources/images/items/' + slug(data.label) + data.rarity_max + '.png" alt="item' + data.id + '">' +
-                            '<div class="form-outline">' +
-                            '<input id="item' + data.id + '_' + data.rarity_max + '" class="form-control text-center" ' +
-                            'type="number" value="' + Cookies.get('item' + data.id + '_' + data.rarity_max) + '">' +
-                            '<label for="item' + data.id + '_' + data.rarity_max + '" class="form-label"></label>' +
-                            '</div>' +
-                            '</div>');
+                    for (let j = 1; j <= data.rarity_max; j++) {
+                        if (typeof Cookies.get('item' + data.id + '_' + j) === 'undefined') Cookies.set('item' + data.id + '_' + j, 0);
+                        if ($('#item-list' + data.type).length === 0) {
+                            $('#resources').append(html)
+                                .find('.item-list-15:last').attr('id', 'item-list' + data.type).append('<div class="text-center">' +
+                                '<img class="item-item" src="./resources/images/items/' + slug(data.label) + j + '.png" alt="item' + data.id + '">' +
+                                '<div class="form-outline">' +
+                                '<input id="item' + data.id + '_' + j + '" class="form-control text-center" ' +
+                                'type="number" value="' + Cookies.get('item' + data.id + '_' + j) + '">' +
+                                '<label for="item' + data.id + '_' + j + '" class="form-label"></label>' +
+                                '</div>' +
+                                '</div>');
+                        } else {
+                            $('#item-list' + data.type).append('<div class="text-center">' +
+                                '<img class="item-item" src="./resources/images/items/' + slug(data.label) + j + '.png" alt="item' + data.id + '">' +
+                                '<div class="form-outline">' +
+                                '<input id="item' + data.id + '_' + j + '" class="form-control text-center" ' +
+                                'type="number" value="' + Cookies.get('item' + data.id + '_' + j) + '">' +
+                                '<label for="item' + data.id + '_' + j + '" class="form-label"></label>' +
+                                '</div>' +
+                                '</div>');
+                        }
                     }
                 });
             });
