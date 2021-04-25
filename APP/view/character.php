@@ -25,33 +25,39 @@ ob_start(); ?>
             <div class="card bg-white shadow">
                 <div class="m-2 mx-lg-4">
                     <div class="tab-content" id="ex1-content">
-                        <div class="tab-pane fade show active" id="ex1-pills-1" role="tabpanel"
+                        <div class="tab-pane mx-2 mx-sm-3 mx-md-4 mt-3 fade show active" id="ex1-pills-1" role="tabpanel"
                              aria-labelledby="ex1-tab-1">
                             <div>
                                 <h4>Select level of character:</h4>
                             </div>
-                            <div class="row row-cols-2">
-                                <div class="form-outline">
-                                    <select class="form-select" aria-label="Default select example">
-                                        <option value="1" selected>Level 0</option>
-                                        <option value="2">Level 20+</option>
-                                        <option value="3">Level 40+</option>
-                                        <option value="4">Level 50+</option>
-                                        <option value="5">Level 60+</option>
-                                        <option value="6">Level 70+</option>
-                                        <option value="7">Level 80+</option>
-                                    </select>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="input-group">
+                                        <label class="input-group-text" id="select" for="level_min">Start</label>
+                                        <select id="level_min" class="form-select" aria-describedby="select">
+                                            <option value="1" selected>Level 1</option>
+                                            <option value="2">Level 20+</option>
+                                            <option value="3">Level 40+</option>
+                                            <option value="4">Level 50+</option>
+                                            <option value="5">Level 60+</option>
+                                            <option value="6">Level 70+</option>
+                                            <option value="7">Level 80+</option>
+                                        </select>
+                                    </div>
                                 </div>
-                                <div class="form-outline">
-                                    <select class="form-select" aria-label="Default select example">
-                                        <option value="1">Level 20</option>
-                                        <option value="2">Level 40</option>
-                                        <option value="3">Level 50</option>
-                                        <option value="4">Level 60</option>
-                                        <option value="5">Level 70</option>
-                                        <option value="6">Level 80</option>
-                                        <option value="7" selected>Level 90</option>
-                                    </select>
+                                <div class="col-6">
+                                    <div class="input-group">
+                                        <label class="input-group-text" id="select" for="level_max">End</label>
+                                        <select id="level_max" class="form-select" aria-describedby="select">
+                                            <option value="1">Level 20</option>
+                                            <option value="2">Level 40</option>
+                                            <option value="3">Level 50</option>
+                                            <option value="4">Level 60</option>
+                                            <option value="5">Level 70</option>
+                                            <option value="6">Level 80</option>
+                                            <option value="7" selected>Level 90</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
 
@@ -89,7 +95,8 @@ ob_start(); ?>
                                         <img class="item-char" alt="" src="resources/images/items/Wanderers-Advice.png">
                                     </div>
                                     <div class="col-md-3 col-lg-4 align-middle text-center d-none d-md-block"
-                                         style="margin-top: 32px">Wanderer's Advice</div>
+                                         style="margin-top: 32px">Wanderer's Advice
+                                    </div>
                                     <div class="col-4 col-md-3 form-outline item-required">
                                         <input id="requiredXp1" class="form-control active" type="number" readonly>
                                         <label for="requiredXp1" class="form-label">Required</label>
@@ -106,7 +113,8 @@ ob_start(); ?>
                                              src="resources/images/items/Adventurers-Experience.png">
                                     </div>
                                     <div class="col-md-3 col-lg-4 align-middle text-center d-none d-md-block"
-                                         style="margin-top: 32px">Adventurer's Experience</div>
+                                         style="margin-top: 32px">Adventurer's Experience
+                                    </div>
                                     <div class="col-4 col-md-3 form-outline item-required">
                                         <input id="requiredXp2" class="form-control active" type="number" readonly>
                                         <label for="requiredXp2" class="form-label">Required</label>
@@ -122,7 +130,8 @@ ob_start(); ?>
                                         <img class="item-char" alt="" src="resources/images/items/Heros-Wit.png">
                                     </div>
                                     <div class="col-md-3 col-lg-4 align-middle text-center d-none d-md-block"
-                                         style="margin-top: 32px">Hero's Wit</div>
+                                         style="margin-top: 32px">Hero's Wit
+                                    </div>
                                     <div class="col-4 col-md-3 form-outline item-required">
                                         <input id="requiredXp3" class="form-control active" type="number" readonly>
                                         <label for="requiredXp3" class="form-label">Required</label>
@@ -139,7 +148,8 @@ ob_start(); ?>
                                         <img class="item-char" alt="" src="resources/images/items/Mora.png">
                                     </div>
                                     <div class="col-md-3 col-lg-4 align-middle text-center d-none d-md-block"
-                                         style="margin-top: 32px">Moras</div>
+                                         style="margin-top: 32px">Moras
+                                    </div>
                                     <div class="col-4 col-md-3 form-outline item-required">
                                         <input id="requiredMoras" class="form-control active" type="number" readonly>
                                         <label for="requiredMoras" class="form-label">Required</label>
@@ -153,36 +163,43 @@ ob_start(); ?>
                             </div>
 
                         </div>
-                        <div class="tab-pane fade" id="ex1-pills-2" role="tabpanel" aria-labelledby="ex1-tab-2">
+                        <div class="tab-pane mx-2 mx-sm-3 mx-md-4 mt-3 fade" id="ex1-pills-2" role="tabpanel" aria-labelledby="ex1-tab-2">
                             <div>
                                 <h4>Select level of talents:</h4>
                             </div>
-                            <div class="row row-cols-2">
-                                <div class="form-outline">
-                                    <select class="form-select" aria-label="Default select example">
-                                        <option value="1" selected>Level 1</option>
-                                        <option value="2">Level 2</option>
-                                        <option value="3">Level 3</option>
-                                        <option value="4">Level 4</option>
-                                        <option value="5">Level 5</option>
-                                        <option value="6">Level 6</option>
-                                        <option value="7">Level 7</option>
-                                        <option value="8">Level 8</option>
-                                        <option value="9">Level 9</option>
-                                    </select>
+
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="input-group">
+                                        <label class="input-group-text" id="select" for="talent_min">Start</label>
+                                        <select id="talent_min" class="form-select" aria-describedby="select">
+                                            <option value="1" selected>Level 1</option>
+                                            <option value="2">Level 2</option>
+                                            <option value="3">Level 3</option>
+                                            <option value="4">Level 4</option>
+                                            <option value="5">Level 5</option>
+                                            <option value="6">Level 6</option>
+                                            <option value="7">Level 7</option>
+                                            <option value="8">Level 8</option>
+                                            <option value="9">Level 9</option>
+                                        </select>
+                                    </div>
                                 </div>
-                                <div class="form-outline">
-                                    <select class="form-select" aria-label="Default select example">
-                                        <option value="2">Level 2</option>
-                                        <option value="3">Level 3</option>
-                                        <option value="4">Level 4</option>
-                                        <option value="5">Level 5</option>
-                                        <option value="6">Level 6</option>
-                                        <option value="7">Level 7</option>
-                                        <option value="8">Level 8</option>
-                                        <option value="9">Level 9</option>
-                                        <option value="10" selected>Level 10</option>
-                                    </select>
+                                <div class="col-6">
+                                    <div class="input-group">
+                                        <label class="input-group-text" id="select" for="talent_max">End</label>
+                                        <select id="talent_max" class="form-select" aria-describedby="select">
+                                            <option value="2">Level 2</option>
+                                            <option value="3">Level 3</option>
+                                            <option value="4">Level 4</option>
+                                            <option value="5">Level 5</option>
+                                            <option value="6">Level 6</option>
+                                            <option value="7">Level 7</option>
+                                            <option value="8">Level 8</option>
+                                            <option value="9">Level 9</option>
+                                            <option value="10" selected>Level 10</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
 
@@ -220,7 +237,8 @@ ob_start(); ?>
                                         <img class="item-char" alt="" src="resources/images/items/Wanderers-Advice.png">
                                     </div>
                                     <div class="col-md-3 col-lg-4 align-middle text-center d-none d-md-block"
-                                         style="margin-top: 32px">Wanderer's Advice</div>
+                                         style="margin-top: 32px">Wanderer's Advice
+                                    </div>
                                     <div class="col-4 col-md-3 form-outline item-required">
                                         <input id="requiredXp1" class="form-control active" type="number" readonly>
                                         <label for="requiredXp1" class="form-label">Required</label>
@@ -237,7 +255,8 @@ ob_start(); ?>
                                              src="resources/images/items/Adventurers-Experience.png">
                                     </div>
                                     <div class="col-md-3 col-lg-4 align-middle text-center d-none d-md-block"
-                                         style="margin-top: 32px">Adventurer's Experience</div>
+                                         style="margin-top: 32px">Adventurer's Experience
+                                    </div>
                                     <div class="col-4 col-md-3 form-outline item-required">
                                         <input id="requiredXp2" class="form-control active" type="number" readonly>
                                         <label for="requiredXp2" class="form-label">Required</label>
@@ -253,7 +272,8 @@ ob_start(); ?>
                                         <img class="item-char" alt="" src="resources/images/items/Heros-Wit.png">
                                     </div>
                                     <div class="col-md-3 col-lg-4 align-middle text-center d-none d-md-block"
-                                         style="margin-top: 32px">Hero's Wit</div>
+                                         style="margin-top: 32px">Hero's Wit
+                                    </div>
                                     <div class="col-4 col-md-3 form-outline item-required">
                                         <input id="requiredXp3" class="form-control active" type="number" readonly>
                                         <label for="requiredXp3" class="form-label">Required</label>
@@ -270,7 +290,8 @@ ob_start(); ?>
                                         <img class="item-char" alt="" src="resources/images/items/Mora.png">
                                     </div>
                                     <div class="col-md-3 col-lg-4 align-middle text-center d-none d-md-block"
-                                         style="margin-top: 32px">Moras</div>
+                                         style="margin-top: 32px">Moras
+                                    </div>
                                     <div class="col-4 col-md-3 form-outline item-required">
                                         <input id="requiredMoras" class="form-control active" type="number" readonly>
                                         <label for="requiredMoras" class="form-label">Required</label>

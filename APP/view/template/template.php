@@ -69,7 +69,7 @@
 
 <footer class="bg-light text-lg-start">
     <div class="text-center py-4 align-items-center">
-        <p>Mes différents médias</p>
+        <p>My different media</p>
         <a href="https://lexiquejaponais.fr" class="btn btn-primary m-1" rel="nofollow" target="_blank" role="button">
             <i class="fas fa-dragon"></i>
         </a>
