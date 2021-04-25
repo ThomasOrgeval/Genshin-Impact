@@ -38,8 +38,8 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarExample01">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item active"><a class="nav-link" aria-current="page" href="">Accueil</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Mes ressources</a></li>
+                <li class="nav-item active"><a class="nav-link" aria-current="page" href="">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="resource">My resources</a></li>
             </ul>
 
             <ul class="navbar-nav d-flex flex-row">
@@ -92,6 +92,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <!-- Axios -->
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<!-- JS Cookie -->
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
 
 <script src="resources/script.js"></script>
 </html>

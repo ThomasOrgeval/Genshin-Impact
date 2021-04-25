@@ -13,4 +13,4 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI}
 
 RewriteRule accueil$ index.php
 RewriteRule character/([a-zA-Z0-9-]+)$ index.php?p=character&label=$1
-RewriteRule resources$ index.php?p=resources
+RewriteRule resource$ index.php?p=resources

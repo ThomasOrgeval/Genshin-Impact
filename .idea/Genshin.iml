@@ -121,5 +121,6 @@
     <orderEntry type="library" name="mdb-ui-kit" level="application" />
     <orderEntry type="library" name="axios" level="application" />
     <orderEntry type="library" name="jquery" level="application" />
+    <orderEntry type="library" name="js-cookie" level="application" />
   </component>
 </module>

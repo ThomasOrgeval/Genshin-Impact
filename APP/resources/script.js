@@ -6,6 +6,12 @@ function getIcon(type, id) {
     return axios.get('https://genshin-api.thomasorgeval.fr/api/' + type + '/' + id).then(response => response.data);
 }
 
+$(document).bind('DOMSubtreeModified', function () {
+    $('.form-control').change(function(){
+        Cookies.set($(this).attr('id'), $(this).val());
+    });
+});
+
 $(document).ready(function ($) {
     if ($('#characters').length) {
         axios({
@@ -76,43 +82,45 @@ $(document).ready(function ($) {
                                     $('#ascension').append(html)
                                         .find('.div-item:last').append('<img class="item-char" src="./resources/images/items/' + slug(results[i].label) + j + '.png" alt="lvl_up_material1">');
                                     $('#ascension').find('.item-label:last').html(results[i].label + ' ' + j);
+                                    $('#ascension').find('.item-required:last input').attr('id', 'requiredItem' + results[i].id + '_' + results[i + 3].rarity_max);
+                                    $('#ascension').find('.item-have:last input').attr('id', 'item' + results[i].id + '_' + results[i].rarity_max)
+                                        .attr('value', Cookies.get('item' + results[i].id + '_' + results[i].rarity_max));
                                 }
                                 for (let j = 1; j <= results[i + 3].rarity_max; j++) {
                                     $('#talent').append(html)
                                         .find('.div-item:last').append('<img class="item-char" src="./resources/images/items/' + slug(results[i + 3].label) + j + '.png" alt="lvl_up_talent1">');
                                     $('#talent').find('.item-label:last').html(results[i + 3].label + ' ' + j);
+                                    $('#talent').find('.item-required:last input').attr('id', 'requiredItem' + results[i + 3].id + '_' + results[i + 3].rarity_max);
+                                    $('#talent').find('.item-have:last input').attr('id', 'item' + results[i + 3].id + '_' + results[i + 3].rarity_max)
+                                        .attr('value', Cookies.get('item' + results[i + 3].id + '_' + results[i + 3].rarity_max));
                                 }
                                 $('#ascension').append('<hr class="my-2">');
                                 $('#talent').append('<hr class="my-2">');
                             }
 
-                            $('#ascension').append(html)
+                            $('#other').append(html)
                                 .find('.div-item:last').append('<img class="item-char" src="./resources/images/items/Wanderers-Advice.png" alt="xp1">');
-                            $('#ascension').find('.item-label:last').html('Wanderer\'s Advice');
-                            $('#ascension').append(html)
-                                .find('.div-item:last').append('<img class="item-char" src="./resources/images/items/Adventurers-Experience.png" alt="xp2">');
-                            $('#ascension').find('.item-label:last').html('Adventurer\'s Experience');
-                            $('#ascension').append(html)
-                                .find('.div-item:last').append('<img class="item-char" src="./resources/images/items/Heros-Wit.png" alt="xp3">');
-                            $('#ascension').find('.item-label:last').html('Hero\'s Wit');
-                            $('#ascension').append('<hr class="my-2">');
-                            $('#ascension').append(html)
-                                .find('.div-item:last').append('<img class="item-char" src="./resources/images/items/Mora.png" alt="mora">');
-                            $('#ascension').find('.item-label:last').html('Moras');
+                            $('#other').find('.item-label:last').html('Wanderer\'s Advice');
+                            $('#other').find('.item-required:last input').attr('id', 'requiredXp1');
+                            $('#other').find('.item-have:last input').attr('id', 'xp1').attr('value', Cookies.get('xp1'));
 
-                            $('#talent').append(html)
-                                .find('.div-item:last').append('<img class="item-char" src="./resources/images/items/Wanderers-Advice.png" alt="xp1">');
-                            $('#talent').find('.item-label:last').html('Wanderer\'s Advice');
-                            $('#talent').append(html)
+                            $('#other').append(html)
                                 .find('.div-item:last').append('<img class="item-char" src="./resources/images/items/Adventurers-Experience.png" alt="xp2">');
-                            $('#talent').find('.item-label:last').html('Adventurer\'s Experience');
-                            $('#talent').append(html)
+                            $('#other').find('.item-label:last').html('Adventurer\'s Experience');
+                            $('#other').find('.item-required:last input').attr('id', 'requiredXp2');
+                            $('#other').find('.item-have:last input').attr('id', 'xp2').attr('value', Cookies.get('xp2'));
+                            $('#other').append(html)
                                 .find('.div-item:last').append('<img class="item-char" src="./resources/images/items/Heros-Wit.png" alt="xp3">');
-                            $('#talent').find('.item-label:last').html('Hero\'s Wit');
-                            $('#talent').append('<hr class="my-2">');
-                            $('#talent').append(html)
+                            $('#other').find('.item-label:last').html('Hero\'s Wit');
+                            $('#other').find('.item-required:last input').attr('id', 'requiredXp3');
+                            $('#other').find('.item-have:last input').attr('id', 'xp3').attr('value', Cookies.get('xp3'));
+
+                            $('#other').append('<hr class="my-2">');
+                            $('#other').append(html)
                                 .find('.div-item:last').append('<img class="item-char" src="./resources/images/items/Mora.png" alt="mora">');
-                            $('#talent').find('.item-label:last').html('Moras');
+                            $('#other').find('.item-label:last').html('Moras');
+                            $('#other').find('.item-required:last input').attr('id', 'requiredMoras');
+                            $('#other').find('.item-have:last input').attr('id', 'moras').attr('value', Cookies.get('moras'));
                         });
                     });
                 }
@@ -125,9 +133,35 @@ $(document).ready(function ($) {
     if ($('#resources').length) {
         axios({
             method: 'get',
-            url: 'https://genshin-api.thomasorgeval.fr/api/items/sort'
+            url: 'https://genshin-api.thomasorgeval.fr/api/items'
         }).then(function (response) {
+            response.data.forEach(function (data) {
 
+                $.get(
+                    './resources/templates/items.html'
+                ).done(function (html) {
+                    if ($('#item-list' + data.type).length === 0) {
+                        $('#resources').append(html)
+                            .find('.item-list-15:last').attr('id', 'item-list' + data.type).append('<div class="text-center">' +
+                            '<img class="item-item" src="./resources/images/items/' + slug(data.label) + data.rarity_max + '.png" alt="item' + data.id + '">' +
+                            '<div class="form-outline">' +
+                            '<input id="item' + data.id + '_' + data.rarity_max + '" class="form-control text-center" ' +
+                            'type="number" value="' + Cookies.get('item' + data.id + '_' + data.rarity_max) + '">' +
+                            '<label for="item' + data.id + '_' + data.rarity_max + '" class="form-label"></label>' +
+                            '</div>' +
+                            '</div>');
+                    } else {
+                        $('#item-list' + data.type).append('<div class="text-center">' +
+                            '<img class="item-item" src="./resources/images/items/' + slug(data.label) + data.rarity_max + '.png" alt="item' + data.id + '">' +
+                            '<div class="form-outline">' +
+                            '<input id="item' + data.id + '_' + data.rarity_max + '" class="form-control text-center" ' +
+                            'type="number" value="' + Cookies.get('item' + data.id + '_' + data.rarity_max) + '">' +
+                            '<label for="item' + data.id + '_' + data.rarity_max + '" class="form-label"></label>' +
+                            '</div>' +
+                            '</div>');
+                    }
+                });
+            });
         }).catch(function (error) {
             console.log(error);
         });

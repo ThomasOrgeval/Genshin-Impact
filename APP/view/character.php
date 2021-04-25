@@ -56,6 +56,7 @@ ob_start(); ?>
                             </div>
 
                             <div id="ascension"></div>
+                            <div id="other"></div>
 
                         </div>
                         <div class="tab-pane fade" id="ex1-pills-2" role="tabpanel" aria-labelledby="ex1-tab-2">
@@ -94,7 +95,7 @@ ob_start(); ?>
                             </div>
 
                             <div id="talent"></div>
-
+                            <div id="other"></div>
                         </div>
                     </div>
                 </div>
