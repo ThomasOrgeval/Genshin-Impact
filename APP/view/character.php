@@ -35,13 +35,13 @@ ob_start(); ?>
                                     <div class="input-group">
                                         <label class="input-group-text" id="select" for="level_min">Start</label>
                                         <select id="level_min" class="form-select" aria-describedby="select">
-                                            <option value="0" selected>Level 1</option>
-                                            <option value="1">Level 20+</option>
-                                            <option value="2">Level 40+</option>
-                                            <option value="3">Level 50+</option>
-                                            <option value="4">Level 60+</option>
-                                            <option value="5">Level 70+</option>
-                                            <option value="6">Level 80+</option>
+                                            <option value="1" selected>Level 1</option>
+                                            <option value="2">Level 20+</option>
+                                            <option value="3">Level 40+</option>
+                                            <option value="4">Level 50+</option>
+                                            <option value="5">Level 60+</option>
+                                            <option value="6">Level 70+</option>
+                                            <option value="7">Level 80+</option>
                                         </select>
                                     </div>
                                 </div>
@@ -190,15 +190,15 @@ ob_start(); ?>
                                     <div class="input-group">
                                         <label class="input-group-text" id="select" for="talent_max">End</label>
                                         <select id="talent_max" class="form-select" aria-describedby="select">
-                                            <option value="2">Level 2</option>
-                                            <option value="3">Level 3</option>
-                                            <option value="4">Level 4</option>
-                                            <option value="5">Level 5</option>
-                                            <option value="6">Level 6</option>
-                                            <option value="7">Level 7</option>
-                                            <option value="8">Level 8</option>
-                                            <option value="9">Level 9</option>
-                                            <option value="10" selected>Level 10</option>
+                                            <option value="1">Level 2</option>
+                                            <option value="2">Level 3</option>
+                                            <option value="3">Level 4</option>
+                                            <option value="4">Level 5</option>
+                                            <option value="5">Level 6</option>
+                                            <option value="6">Level 7</option>
+                                            <option value="7">Level 8</option>
+                                            <option value="8">Level 9</option>
+                                            <option value="9" selected>Level 10</option>
                                         </select>
                                     </div>
                                 </div>

@@ -5,6 +5,7 @@ $(document).ready(function ($) {
 
     if ($('#character').length) {
         costAscension($('#level_min').val(), $('#level_max').val());
+        costTalent($('#talent_min').val(), $('#talent_max').val());
     }
 
     $('#level_min').change(function () {
@@ -16,15 +17,11 @@ $(document).ready(function ($) {
     });
 
     $('#talent_min').change(function () {
-        $('#talent input[id^="required"]').each(function () {
-
-        });
+        costTalent($('#talent_min').val(), $('#talent_max').val());
     });
 
     $('#talent_max').change(function () {
-        $('#talent input[id^="required"]').each(function () {
-
-        });
+        costTalent($('#talent_min').val(), $('#talent_max').val());
     });
 });
 
@@ -51,12 +48,12 @@ function costAscension(lvl_min, lvl_max) {
     );
 }
 
-function costTalent(lvl_min, lvl_max) {
+function costTalent(tal_min, tal_max) {
     $.post(
         'ajax/character/talent.php',
         {
-            lvl_min: lvl_min,
-            lvl_max: lvl_max
+            lvl_min: tal_min,
+            lvl_max: tal_max
         },
         function (response) {
             $('#tal_core').val(escapeNumber(response.core));
