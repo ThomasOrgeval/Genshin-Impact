@@ -33,10 +33,12 @@ function slug($label)
 function getValue($var): int
 {
     $value = 0;
-    if (isset($_SESSION) && isset($_SESSION['items']) && isset($_SESSION['items'][$var])) {
-        $value = $_SESSION['items'][$var];
-    } elseif (isset($_COOKIE) && isset($_COOKIE['item' . $var])) {
-        $value = $_COOKIE['item' . $var];
+    if (isset($_SESSION) && ((isset($_SESSION['items']) && isset($_SESSION['items'][$var]) || $_SESSION[$var] ))) {
+        if ($var === 'moras') $value = $_SESSION[$var];
+        else $value = $_SESSION['items'][$var];
+    } elseif (isset($_COOKIE) && (isset($_COOKIE['item' . $var]) || isset($_COOKIE[$var]) )) {
+        if ($var === 'moras') $value = $_COOKIE[$var];
+        else $value = $_COOKIE['item' . $var];
     }
     return $value;
 }

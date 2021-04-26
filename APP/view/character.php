@@ -242,7 +242,7 @@ ob_start(); ?>
                                     </div>
                                     <div class="col-4 col-md-3 form-outline item-required">
                                         <input id="tal_moras" class="form-control active" type="text" readonly>
-                                        <label for="requiredMoras" class="form-label">Required</label>
+                                        <label for="tal_moras" class="form-label">Required</label>
                                     </div>
                                     <div class="col-4 col-md-3 form-outline item-have">
                                         <input id="moras" class="form-control active" type="number"

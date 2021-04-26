@@ -1,5 +1,6 @@
 $(document).ready(function ($) {
     $('.form-control').change(function () {
+        console.log(Cookies.get($(this).attr('id')))
         Cookies.set($(this).attr('id'), $(this).val());
     });
 
