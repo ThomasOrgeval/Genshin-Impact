@@ -115,7 +115,8 @@ values ('Cecilia', 1, 1),
        ('Dragon Lord\'s Crown', 5, 1),
        ('Bloodjade Branch', 5, 1),
        ('Gilded Scale', 5, 1),
-       ('Silk Flower', 1, 1);
+       ('Silk Flower', 1, 1),
+       ('Starconch', 1, 1);
 
 create table characters
 (
@@ -145,7 +146,10 @@ create table characters
 
 insert into characters (label, element, weapon, rarity, lvl_up_material1, lvl_up_material2, lvl_up_material3,
                         talent_up_material1, talent_up_material2, talent_up_material3, created_at, updated_at)
-values ('Ganyu', 5, 5, 5, 27, 7, 22, 36, 22, 47, now(), now());
+values ('Ganyu', 5, 5, 5, 27, 7, 22, 36, 22, 47, now(), now()),
+       ('Hu Tao', 6, 4, 5, 30, 51, 22, 36, 22, 46, now(), now()),
+       ('Tartaglia', 4, 5, 5, 28, 52, 20, 32, 20, 46, now(), now()),
+       ('Keqing', 3, 1, 5, 26, 2, 22, 35, 22, 40, now(), now());
 
 select c.label,
        e.label,

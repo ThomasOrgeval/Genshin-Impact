@@ -1,3 +1,4 @@
-/.idea/
+*/.idea/
 */vendor/
 APP/model/env.json
+/.idea/
