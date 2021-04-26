@@ -116,7 +116,8 @@ values ('Cecilia', 1, 1),
        ('Bloodjade Branch', 5, 1),
        ('Gilded Scale', 5, 1),
        ('Silk Flower', 1, 1),
-       ('Starconch', 1, 1);
+       ('Starconch', 1, 1),
+       ('Valberry', 1, 1);
 
 create table characters
 (
@@ -149,7 +150,11 @@ insert into characters (label, element, weapon, rarity, lvl_up_material1, lvl_up
 values ('Ganyu', 5, 5, 5, 27, 7, 22, 36, 22, 47, now(), now()),
        ('Hu Tao', 6, 4, 5, 30, 51, 22, 36, 22, 46, now(), now()),
        ('Tartaglia', 4, 5, 5, 28, 52, 20, 32, 20, 46, now(), now()),
-       ('Keqing', 3, 1, 5, 26, 2, 22, 35, 22, 40, now(), now());
+       ('Keqing', 3, 1, 5, 26, 2, 22, 35, 22, 40, now(), now()),
+       ('Eula', 5, 2, 5, 31, 3, 15, 33, 15, 48, now(), now()),
+       ('Bennett', 6, 1, 4, 29, 9, 16, 33, 16, 42, now(), now()),
+       ('Zhongli', 1, 4, 5, 24, 2, 19, 37, 19, 45, now(), now()),
+       ('Rosaria', 5, 4, 4, 27, 53, 20, 34, 20, 47, now(), now());
 
 create table experiences
 (
@@ -215,6 +220,3 @@ values (1, '2', 0, 3, 1, 6, 1, 12500, 0),
        (7, '8', 1, 6, 3, 6, 3, 260000, 0),
        (8, '9', 2, 12, 3, 9, 3, 450000, 0),
        (9, '10', 2, 16, 3, 12, 3, 700000, 1);
-
-select id, level, stone, lvl_stone, core, flower, item, lvl_item, moras, xp1, xp2, xp3 from ascensions
-        where id between 0 and 7

@@ -16,18 +16,18 @@ ob_start(); ?>
                                  class="element ms-auto" alt="element">
                         </div>
                         <div class="card-text d-flex">
-                            <img class="item" alt="lvl_up_material1"
+                            <img class="item" alt="1"
                                  src="resources/images/items/<?= slug($character['lvl1'] . $character['lvl_rar1']) ?>.png">
-                            <img class="item" alt="lvl_up_material2"
+                            <img class="item" alt="2"
                                  src="resources/images/items/<?= slug($character['lvl2'] . $character['lvl_rar2']) ?>.png">
-                            <img class="item" alt="lvl_up_material3"
+                            <img class="item" alt="3"
                                  src="resources/images/items/<?= slug($character['lvl3'] . $character['lvl_rar3']) ?>.png">
                             <div class="vertical"></div>
-                            <img class="item" alt="talent_up_material1"
+                            <img class="item" alt="4"
                                  src="resources/images/items/<?= slug($character['tal1'] . $character['tal_rar1']) ?>.png">
-                            <img class="item" alt="talent_up_material2"
+                            <img class="item" alt="5"
                                  src="resources/images/items/<?= slug($character['tal2'] . $character['tal_rar2']) ?>.png">
-                            <img class="item" alt="talent_up_material3"
+                            <img class="item" alt="6"
                                  src="resources/images/items/<?= slug($character['tal3'] . $character['tal_rar3']) ?>.png">
                         </div>
                     </div>
