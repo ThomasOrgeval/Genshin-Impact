@@ -5,6 +5,7 @@ require __DIR__ . '/elements.php';
 require __DIR__ . '/items.php';
 require __DIR__ . '/types.php';
 require __DIR__ . '/weapons.php';
+require __DIR__ . '/ascension.php';
 
 function db(): PDO
 {

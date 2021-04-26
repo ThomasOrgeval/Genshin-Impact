@@ -27,7 +27,8 @@ from characters c
          inner join items i3 on c.lvl_up_material3 = i3.id
          inner join items i4 on c.talent_up_material1 = i4.id
          inner join items i5 on c.talent_up_material2 = i5.id
-         inner join items i6 on c.talent_up_material3 = i6.id")->fetchAll();
+         inner join items i6 on c.talent_up_material3 = i6.id
+         order by rarity desc, c.label")->fetchAll();
 }
 
 function getCharacter($label)
