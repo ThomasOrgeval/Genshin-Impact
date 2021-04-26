@@ -264,7 +264,7 @@ ob_start(); ?>
                                     </div>
                                     <div class="col-4 col-md-3 form-outline item-have">
                                         <input id="crown" class="form-control active" type="number"
-                                               value="<?= getValue('moras') ?>">
+                                               value="<?= getValue('38_1') ?>">
                                         <label for="crown" class="form-label">Have</label>
                                     </div>
                                 </div>

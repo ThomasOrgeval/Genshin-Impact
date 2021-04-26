@@ -4,6 +4,8 @@ require '../../model/db.php';
 $min = $_POST['lvl_min'];
 $max = $_POST['lvl_max'];
 
+const MULTIPLIER = 3;
+
 $book1 = 0;
 $book2 = 0;
 $book3 = 0;
@@ -50,6 +52,6 @@ foreach (getTalents($min, $max) as $talent) {
     $crown += (int) $talent['crown'];
 }
 
-$array = array('book' => [$book1, $book2, $book3], 'core' => $core, 'crown' => $crown,
-    'item' => [$item1, $item2, $item3], 'moras' => $moras);
+$array = array('book' => [$book1 * MULTIPLIER, $book2 * MULTIPLIER, $book3 * MULTIPLIER], 'core' => $core * MULTIPLIER,
+    'crown' => $crown * MULTIPLIER, 'item' => [$item1 * MULTIPLIER, $item2 * MULTIPLIER, $item3 * MULTIPLIER], 'moras' => $moras * MULTIPLIER);
 echo json_encode($array);
