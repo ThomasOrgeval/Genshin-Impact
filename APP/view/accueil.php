@@ -10,10 +10,14 @@ ob_start(); ?>
                              src="resources/images/characters/<?= slug($character['label']) ?>">
                     </div>
                     <div class="card-body">
-                        <div class="row-cols-2 d-flex">
+                        <div class="justify-content-between d-flex">
                             <h3 class="card-title character_name"><?= $character['label'] ?></h3>
-                            <img src="resources/images/elements/<?= $character['element'] ?>.png"
-                                 class="element ms-auto" alt="element">
+                            <div>
+                                <img src="resources/images/weapons/<?= $character['weapon'] ?>.png"
+                                     class="element ms-auto" alt="weapon">
+                                <img src="resources/images/elements/<?= $character['element'] ?>.png"
+                                     class="element ms-auto" alt="element">
+                            </div>
                         </div>
                         <div class="card-text d-flex">
                             <img class="item" alt="1"
