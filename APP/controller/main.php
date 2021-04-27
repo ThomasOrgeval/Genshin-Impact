@@ -11,6 +11,11 @@ function accueil()
 function character()
 {
     $_POST = getCharacter(str_replace('-', ' ', $_GET['label']));
+     $_POST['stones'] = get_stones($_POST['element']);
+    if (in_array($_GET['label'], ['Lumine', 'Aether'])) {
+        unset($_POST['lvl1']);
+        unset($_POST['lvl_rar1']);
+    }
     require './view/character.php';
 }
 
@@ -33,12 +38,41 @@ function slug($label)
 function getValue($var): int
 {
     $value = 0;
-    if (isset($_SESSION) && ((isset($_SESSION['items']) && isset($_SESSION['items'][$var]) || $_SESSION[$var] ))) {
+    if (isset($_SESSION) && ((isset($_SESSION['items']) && isset($_SESSION['items'][$var]) || $_SESSION[$var]))) {
         if ($var === 'moras') $value = $_SESSION[$var];
         else $value = $_SESSION['items'][$var];
-    } elseif (isset($_COOKIE) && (isset($_COOKIE['item' . $var]) || isset($_COOKIE[$var]) )) {
+    } elseif (isset($_COOKIE) && (isset($_COOKIE['item' . $var]) || isset($_COOKIE[$var]))) {
         if ($var === 'moras') $value = $_COOKIE[$var];
         else $value = $_COOKIE['item' . $var];
     }
     return $value;
+}
+
+function get_stones($element): array
+{
+    $var = null;
+    switch ($element) {
+        case 'Pyro':
+            $var = 'Agnidus Agate';
+            break;
+        case 'Cryo':
+            $var = 'Vayuda Turquoise';
+            break;
+        case 'Hydro':
+            $var = 'Varunada Lazurite';
+            break;
+        case 'Electro':
+            $var = 'Vajrada Amethyst';
+            break;
+        case 'Geo':
+            $var = 'Prithiva Topaz';
+            break;
+        case 'Anemo':
+            $var = 'Shivada Jade';
+            break;
+        case 'All':
+            $var = 'Brilliant Diamond';
+            break;
+    }
+    return getStones($var);
 }

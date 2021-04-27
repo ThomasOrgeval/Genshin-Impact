@@ -25,7 +25,8 @@ ob_start(); ?>
             <div class="card bg-white shadow">
                 <div class="m-2 mx-lg-4">
                     <div class="tab-content" id="ex1-content">
-                        <div class="tab-pane mx-2 mx-sm-3 mx-md-4 mt-3 fade show active" id="ex1-pills-1" role="tabpanel"
+                        <div class="tab-pane mx-2 mx-sm-3 mx-md-4 mt-3 fade show active" id="ex1-pills-1"
+                             role="tabpanel"
                              aria-labelledby="ex1-tab-1">
                             <div>
                                 <h4>Select level of character:</h4>
@@ -62,8 +63,35 @@ ob_start(); ?>
                             </div>
 
                             <div id="ascension">
-                                <?php $list = array(['core'], ['flower'], ['item0', 'item1', 'item2']);
-                                for ($i = 1; $i <= 3; $i++) :
+                                <?php if (isset($_POST['stones'])) :
+                                    $stone = $_POST['stones'][0];
+                                    for ($i = 1; $i <= $stone['rarity_max']; $i++) : ?>
+                                        <div class="row my-2">
+                                            <div class="col-4 col-md-3 col-lg-2 div-item">
+                                                <img class="item-char" alt=""
+                                                     src="resources/images/items/<?= slug($stone['label']) . $i ?>.png">
+                                            </div>
+                                            <div class="col-md-3 col-lg-4 align-middle text-center d-none d-md-block"
+                                                 style="margin-top: 32px"><?= $stone['label'] . ' ' . $i ?></div>
+                                            <div class="col-4 col-md-3 form-outline item-required">
+                                                <input id="stone<?= $i - 1 ?>"
+                                                       class="form-control active" type="text" readonly>
+                                                <label for="stone<?= $i - 1 ?>" class="form-label">Required</label>
+                                            </div>
+                                            <div class="col-4 col-md-3 form-outline item-have">
+                                                <input id="item<?= $stone['id'] . '_' . $i ?>"
+                                                       class="form-control active" type="number"
+                                                       value="<?= getValue('item' . $stone['id'] . '_' . $i) ?>">
+                                                <label for="item<?= $stone['id'] . '_' . $i ?>"
+                                                       class="form-label">Have</label>
+                                            </div>
+                                        </div>
+                                    <?php endfor; ?>
+                                    <hr class="my-2">
+                                <?php endif;
+                                $list = array(['core'], ['flower'], ['item0', 'item1', 'item2']);
+                                $i = in_array($_GET['label'], ['Lumine', 'Aether']) ? 2 : 1;
+                                for ($i; $i <= 3; $i++) :
                                     for ($j = 1; $j <= $_POST['lvl_rar' . $i]; $j++) : ?>
                                         <div class="row my-2">
                                             <div class="col-4 col-md-3 col-lg-2 div-item">
@@ -164,7 +192,8 @@ ob_start(); ?>
                             </div>
 
                         </div>
-                        <div class="tab-pane mx-2 mx-sm-3 mx-md-4 mt-3 fade" id="ex1-pills-2" role="tabpanel" aria-labelledby="ex1-tab-2">
+                        <div class="tab-pane mx-2 mx-sm-3 mx-md-4 mt-3 fade" id="ex1-pills-2" role="tabpanel"
+                             aria-labelledby="ex1-tab-2">
                             <div>
                                 <h4>Select level of talents:</h4>
                             </div>
@@ -253,7 +282,8 @@ ob_start(); ?>
                                 <hr class="my-2">
                                 <div class="row my-2">
                                     <div class="col-4 col-md-3 col-lg-2 div-item">
-                                        <img class="item-char" alt="" src="resources/images/items/Crown-of-Insight1.png">
+                                        <img class="item-char" alt=""
+                                             src="resources/images/items/Crown-of-Insight1.png">
                                     </div>
                                     <div class="col-md-3 col-lg-4 align-middle text-center d-none d-md-block"
                                          style="margin-top: 32px">Crown of Insight

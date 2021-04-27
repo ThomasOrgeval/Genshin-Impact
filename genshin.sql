@@ -51,7 +51,8 @@ values ('Flower'),
        ('Mob'),
        ('Talent'),
        ('Boss'),
-       ('Unique Boss');
+       ('Unique Boss'),
+       ('Stone');
 
 create table items
 (
@@ -120,7 +121,14 @@ values ('Cecilia', 1, 1),
        ('Starconch', 1, 1),
        ('Valberry', 1, 1),
        ('Small Lamp Grass', 1, 1),
-       ('Calla Lily', 1, 1);
+       ('Calla Lily', 1, 1),
+       ('Brilliant Diamond', 6, 4),
+       ('Agnidus Agate', 6, 4),
+       ('Shivada Jade', 6, 4),
+       ('Vajrada Amethyst', 6, 4),
+       ('Varunada Lazurite', 6, 4),
+       ('Vayuda Turquoise', 6, 4),
+       ('Prithiva Topaz', 6, 4);
 
 create table characters
 (
@@ -179,7 +187,9 @@ values ('Ganyu', 5, 5, 5, 27, 7, 22, 36, 22, 47, now(), now()),
        ('Sucrose', 2, 3, 4, 25, 9, 22, 32, 22, 41, now(), now()),
        ('Venti', 2, 5, 5, 25, 1, 19, 34, 19, 39, now(), now()),
        ('Ningguang', 1, 3, 4, 24, 4, 20, 35, 20, 41, now(), now()),
-       ('Noelle', 1, 2, 4, 24, 53, 15, 33, 15, 43, now(), now());
+       ('Noelle', 1, 2, 4, 24, 53, 15, 33, 15, 43, now(), now()),
+       ('Lumine', 8, 1, 5, 56, 9, 15, 32, 18, 44, now(), now()),
+       ('Aether', 8, 1, 5, 56, 9, 15, 32, 18, 44, now(), now());
 
 create table experiences
 (
