@@ -18,7 +18,8 @@ values ('Geo'),
        ('Hydro'),
        ('Cryo'),
        ('Pyro'),
-       ('Dendro');
+       ('Dendro'),
+       ('All');
 
 create table weapons
 (
@@ -117,7 +118,9 @@ values ('Cecilia', 1, 1),
        ('Gilded Scale', 5, 1),
        ('Silk Flower', 1, 1),
        ('Starconch', 1, 1),
-       ('Valberry', 1, 1);
+       ('Valberry', 1, 1),
+       ('Small Lamp Grass', 1, 1),
+       ('Calla Lily', 1, 1);
 
 create table characters
 (
@@ -154,7 +157,29 @@ values ('Ganyu', 5, 5, 5, 27, 7, 22, 36, 22, 47, now(), now()),
        ('Eula', 5, 2, 5, 31, 3, 15, 33, 15, 48, now(), now()),
        ('Bennett', 6, 1, 4, 29, 9, 16, 33, 16, 42, now(), now()),
        ('Zhongli', 1, 4, 5, 24, 2, 19, 37, 19, 45, now(), now()),
-       ('Rosaria', 5, 4, 4, 27, 53, 20, 34, 20, 47, now(), now());
+       ('Rosaria', 5, 4, 4, 27, 53, 20, 34, 20, 47, now(), now()),
+       ('Razor', 3, 2, 4, 26, 10, 15, 33, 15, 43, now(), now()),
+       ('Amber', 6, 5, 4, 29, 54, 17, 32, 17, 44, now(), now()),
+       ('Diluc', 6, 2, 5, 29, 54, 20, 33, 20, 42, now(), now()),
+       ('Klee', 6, 3, 5, 29, 6, 18, 32, 18, 40, now(), now()),
+       ('Qiqi', 5, 1, 5, 27, 8, 18, 35, 18, 39, now(), now()),
+       ('Mona', 4, 3, 5, 28, 6, 22, 33, 22, 40, now(), now()),
+       ('Xiao', 2, 4, 5, 30, 7, 19, 35, 19, 47, now(), now()),
+       ('Albedo', 1, 1, 5, 24, 1, 18, 34, 18, 45, now(), now()),
+       ('Xiangling', 6, 4, 4, 29, 5, 18, 36, 18, 43, now(), now()),
+       ('Xinyan', 6, 2, 4, 29, 8, 16, 37, 16, 45, now(), now()),
+       ('Xingqiu', 4, 1, 4, 28, 51, 15, 37, 15, 39, now(), now()),
+       ('Beidou', 3, 2, 4, 26, 30, 16, 37, 16, 44, now(), now()),
+       ('Fischl', 3, 5, 4, 26, 54, 17, 34, 17, 41, now(), now()),
+       ('Lisa', 3, 3, 4, 26, 53, 19, 34, 19, 43, now(), now()),
+       ('Chongyun', 5, 2, 4, 27, 2, 15, 36, 15, 44, now(), now()),
+       ('Kaeya', 5, 1, 4, 27, 55, 16, 34, 16, 41, now(), now()),
+       ('Diona', 5, 5, 4, 27, 55, 17, 32, 17, 46, now(), now()),
+       ('Jean', 2, 1, 5, 25, 3, 15, 33, 15, 42, now(), now()),
+       ('Sucrose', 2, 3, 4, 25, 9, 22, 32, 22, 41, now(), now()),
+       ('Venti', 2, 5, 5, 25, 1, 19, 34, 19, 39, now(), now()),
+       ('Ningguang', 1, 3, 4, 24, 4, 20, 35, 20, 41, now(), now()),
+       ('Noelle', 1, 2, 4, 24, 53, 15, 33, 15, 43, now(), now());
 
 create table experiences
 (
