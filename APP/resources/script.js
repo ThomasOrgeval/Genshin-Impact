@@ -34,16 +34,16 @@ function costAscension(lvl_min, lvl_max) {
             lvl_max: lvl_max
         },
         function (response) {
+            $('#stone0').val(escapeNumber(response.stone[0]));
+            $('#stone1').val(escapeNumber(response.stone[1]));
+            $('#stone2').val(escapeNumber(response.stone[2]));
+            $('#stone3').val(escapeNumber(response.stone[3]));
+
             $('#core').val(escapeNumber(response.core));
             $('#flower').val(escapeNumber(response.flower));
             $('#item0').val(escapeNumber(response.item[0]));
             $('#item1').val(escapeNumber(response.item[1]));
             $('#item2').val(escapeNumber(response.item[2]));
-
-            $('#stone0').val(escapeNumber(response.stone[0]));
-            $('#stone1').val(escapeNumber(response.stone[1]));
-            $('#stone2').val(escapeNumber(response.stone[2]));
-            $('#stone3').val(escapeNumber(response.stone[3]));
 
             $('#asc_xp1').val(escapeNumber(response.xp[0]));
             $('#asc_xp2').val(escapeNumber(response.xp[1]));
