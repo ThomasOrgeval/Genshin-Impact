@@ -61,6 +61,13 @@ ob_start(); ?>
                                     </div>
                                 </div>
                             </div>
+                            <div class="m-2" style="font-size: 30px">
+                                <ul class="list-unstyled d-flex justify-content-evenly justify-content-md-start">
+                                    <li class="me-md-3" onclick="addList('ascension')" data-mdb-toggle="tooltip" title="Create your own!">
+                                        <i class="fas fa-list-ul"></i>
+                                    </li>
+                                </ul>
+                            </div>
 
                             <div id="ascension">
                                 <?php if (isset($_POST['stones'])) :
@@ -73,12 +80,12 @@ ob_start(); ?>
                                             </div>
                                             <div class="col-md-3 col-lg-4 align-middle text-center d-none d-md-block"
                                                  style="margin-top: 32px"><?= $stone['label'] . ' ' . $i ?></div>
-                                            <div class="col-4 col-md-3 form-outline item-required">
+                                            <div class="col-4 col-md-3 form-outline item-required p-0">
                                                 <input id="stone<?= $i - 1 ?>"
                                                        class="form-control active" type="text" readonly>
                                                 <label for="stone<?= $i - 1 ?>" class="form-label">Required</label>
                                             </div>
-                                            <div class="col-4 col-md-3 form-outline item-have">
+                                            <div class="col-4 col-md-3 form-outline item-have p-0">
                                                 <input id="item<?= $stone['id'] . '_' . $i ?>"
                                                        class="form-control active" type="number"
                                                        value="<?= getValue('item' . $stone['id'] . '_' . $i) ?>">
@@ -100,13 +107,13 @@ ob_start(); ?>
                                             </div>
                                             <div class="col-md-3 col-lg-4 align-middle text-center d-none d-md-block"
                                                  style="margin-top: 32px"><?= $_POST['lvl' . $i] . ' ' . $j ?></div>
-                                            <div class="col-4 col-md-3 form-outline item-required">
+                                            <div class="col-4 col-md-3 form-outline item-required p-0">
                                                 <input id="<?= $list[$i - 1][$j - 1] ?>"
                                                        class="form-control active" type="text" readonly>
                                                 <label for="<?= $list[$i - 1][$j - 1] ?>"
                                                        class="form-label">Required</label>
                                             </div>
-                                            <div class="col-4 col-md-3 form-outline item-have">
+                                            <div class="col-4 col-md-3 form-outline item-have p-0">
                                                 <input id="item<?= $_POST['lvl_id' . $i] . '_' . $j ?>"
                                                        class="form-control active" type="number"
                                                        value="<?= getValue($_POST['lvl_id' . $i] . '_' . $j) ?>">
@@ -126,11 +133,11 @@ ob_start(); ?>
                                     <div class="col-md-3 col-lg-4 align-middle text-center d-none d-md-block"
                                          style="margin-top: 32px">Wanderer's Advice
                                     </div>
-                                    <div class="col-4 col-md-3 form-outline item-required">
+                                    <div class="col-4 col-md-3 form-outline item-required p-0">
                                         <input id="asc_xp1" class="form-control active" type="number" readonly>
                                         <label for="asc_xp1" class="form-label">Required</label>
                                     </div>
-                                    <div class="col-4 col-md-3 form-outline item-have">
+                                    <div class="col-4 col-md-3 form-outline item-have p-0">
                                         <input id="xp1" class="form-control active" type="text"
                                                value="<?= getValue('xp1') ?>">
                                         <label for="xp1" class="form-label">Have</label>
@@ -144,11 +151,11 @@ ob_start(); ?>
                                     <div class="col-md-3 col-lg-4 align-middle text-center d-none d-md-block"
                                          style="margin-top: 32px">Adventurer's Experience
                                     </div>
-                                    <div class="col-4 col-md-3 form-outline item-required">
+                                    <div class="col-4 col-md-3 form-outline item-required p-0">
                                         <input id="asc_xp2" class="form-control active" type="number" readonly>
                                         <label for="asc_xp2" class="form-label">Required</label>
                                     </div>
-                                    <div class="col-4 col-md-3 form-outline item-have">
+                                    <div class="col-4 col-md-3 form-outline item-have p-0">
                                         <input id="xp2" class="form-control active" type="text"
                                                value="<?= getValue('xp2') ?>">
                                         <label for="xp2" class="form-label">Have</label>
@@ -161,11 +168,11 @@ ob_start(); ?>
                                     <div class="col-md-3 col-lg-4 align-middle text-center d-none d-md-block"
                                          style="margin-top: 32px">Hero's Wit
                                     </div>
-                                    <div class="col-4 col-md-3 form-outline item-required">
+                                    <div class="col-4 col-md-3 form-outline item-required p-0">
                                         <input id="asc_xp3" class="form-control active" type="text" readonly>
                                         <label for="asc_xp3" class="form-label">Required</label>
                                     </div>
-                                    <div class="col-4 col-md-3 form-outline item-have">
+                                    <div class="col-4 col-md-3 form-outline item-have p-0">
                                         <input id="xp3" class="form-control active" type="number"
                                                value="<?= getValue('xp3') ?>">
                                         <label for="xp3" class="form-label">Have</label>
@@ -179,11 +186,11 @@ ob_start(); ?>
                                     <div class="col-md-3 col-lg-4 align-middle text-center d-none d-md-block"
                                          style="margin-top: 32px">Moras
                                     </div>
-                                    <div class="col-4 col-md-3 form-outline item-required">
+                                    <div class="col-4 col-md-3 form-outline item-required p-0">
                                         <input id="asc_moras" class="form-control active" type="text" readonly>
                                         <label for="asc_moras" class="form-label">Required</label>
                                     </div>
-                                    <div class="col-4 col-md-3 form-outline item-have">
+                                    <div class="col-4 col-md-3 form-outline item-have p-0">
                                         <input id="moras" class="form-control active" type="number"
                                                value="<?= getValue('moras') ?>">
                                         <label for="moras" class="form-label">Have</label>
@@ -232,6 +239,13 @@ ob_start(); ?>
                                     </div>
                                 </div>
                             </div>
+                            <div class="m-2" style="font-size: 30px">
+                                <ul class="list-unstyled d-flex justify-content-evenly justify-content-md-start">
+                                    <li class="me-md-3" onclick="addList('talent')" data-mdb-toggle="tooltip" title="Create your own!">
+                                        <i class="fas fa-list-ul"></i>
+                                    </li>
+                                </ul>
+                            </div>
 
                             <div id="talent">
                                 <?php $list = array(['book0', 'book1', 'book2'], ['tal_item0', 'tal_item1', 'tal_item2'], ['tal_core']);
@@ -244,13 +258,13 @@ ob_start(); ?>
                                             </div>
                                             <div class="col-md-3 col-lg-4 align-middle text-center d-none d-md-block"
                                                  style="margin-top: 32px"><?= $_POST['tal' . $i] . ' ' . $j ?></div>
-                                            <div class="col-4 col-md-3 form-outline item-required">
+                                            <div class="col-4 col-md-3 form-outline item-required p-0">
                                                 <input id="<?= $list[$i - 1][$j - 1] ?>"
                                                        class="form-control active" type="text" readonly>
                                                 <label for="<?= $list[$i - 1][$j - 1] ?>"
                                                        class="form-label">Required</label>
                                             </div>
-                                            <div class="col-4 col-md-3 form-outline item-have">
+                                            <div class="col-4 col-md-3 form-outline item-have p-0">
                                                 <input id="item<?= $_POST['tal_id' . $i] . '_' . $j ?>"
                                                        class="form-control active" type="number"
                                                        value="<?= getValue($_POST['tal_id' . $i] . '_' . $j) ?>">
@@ -269,11 +283,11 @@ ob_start(); ?>
                                     <div class="col-md-3 col-lg-4 align-middle text-center d-none d-md-block"
                                          style="margin-top: 32px">Moras
                                     </div>
-                                    <div class="col-4 col-md-3 form-outline item-required">
+                                    <div class="col-4 col-md-3 form-outline item-required p-0">
                                         <input id="tal_moras" class="form-control active" type="text" readonly>
                                         <label for="tal_moras" class="form-label">Required</label>
                                     </div>
-                                    <div class="col-4 col-md-3 form-outline item-have">
+                                    <div class="col-4 col-md-3 form-outline item-have p-0">
                                         <input id="moras" class="form-control active" type="number"
                                                value="<?= getValue('moras') ?>">
                                         <label for="moras" class="form-label">Have</label>
@@ -288,11 +302,11 @@ ob_start(); ?>
                                     <div class="col-md-3 col-lg-4 align-middle text-center d-none d-md-block"
                                          style="margin-top: 32px">Crown of Insight
                                     </div>
-                                    <div class="col-4 col-md-3 form-outline item-required">
+                                    <div class="col-4 col-md-3 form-outline item-required p-0">
                                         <input id="tal_crown" class="form-control active" type="text" readonly>
                                         <label for="tal_crown" class="form-label">Required</label>
                                     </div>
-                                    <div class="col-4 col-md-3 form-outline item-have">
+                                    <div class="col-4 col-md-3 form-outline item-have p-0">
                                         <input id="crown" class="form-control active" type="number"
                                                value="<?= getValue('38_1') ?>">
                                         <label for="crown" class="form-label">Have</label>

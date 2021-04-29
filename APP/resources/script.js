@@ -1,9 +1,4 @@
 $(document).ready(function ($) {
-    $('.form-control').change(function () {
-        console.log(Cookies.get($(this).attr('id')))
-        Cookies.set($(this).attr('id'), $(this).val());
-    });
-
     if ($('#character').length) {
         costAscension($('#level_min').val(), $('#level_max').val());
         costTalent($('#talent_min').val(), $('#talent_max').val());
@@ -79,10 +74,21 @@ function costTalent(tal_min, tal_max) {
 }
 
 function escapeNumber(number) {
-    return number.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")
+    return number.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+}
+
+function number(number) {
+    return Number(number.replaceAll(',', ''));
 }
 
 function showCharacterItem(item) {
     if (item.val() === '0') item.parents(':eq(1)').addClass('d-none');
     else item.parents(':eq(1)').removeClass('d-none');
+}
+
+function addList(id) {
+    let inputs = $('#' + id + ' .item-required :input');
+    for (let i = 0; i < inputs.length; i++) {
+        console.log(number($('#' + inputs[i].id).val()));
+    }
 }
