@@ -19,6 +19,19 @@ $(document).ready(function ($) {
     $('#talent_max').change(function () {
         costTalent($('#talent_min').val(), $('#talent_max').val());
     });
+
+    $('input').change(function (e) {
+        e.preventDefault();
+        let input = $(this);
+        $.post(
+            'ajax/resources/inventory.php',
+            {
+                item: input.attr('id'),
+                amount: input.val()
+            },
+            'html'
+        );
+    });
 });
 
 function costAscension(lvl_min, lvl_max) {

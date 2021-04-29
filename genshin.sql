@@ -52,7 +52,8 @@ values ('Flower'),
        ('Talent'),
        ('Boss'),
        ('Unique Boss'),
-       ('Stone');
+       ('Stone'),
+       ('Moras');
 
 create table items
 (
@@ -128,7 +129,9 @@ values ('Cecilia', 1, 1),
        ('Vajrada Amethyst', 6, 4),
        ('Varunada Lazurite', 6, 4),
        ('Vayuda Turquoise', 6, 4),
-       ('Prithiva Topaz', 6, 4);
+       ('Prithiva Topaz', 6, 4),
+       ('Moras', 7, 1),
+       ('xp', 7, 3);
 
 create table characters
 (
@@ -262,5 +265,19 @@ create table user
     pseudo varchar(60)        not null,
     mail   varchar(255)       not null,
     pass   varchar(100)       not null,
+    primary key (id)
+) engine = InnoDB;
+
+insert into user
+    value (1, 'Raiwtsu', 'orgevalthomas@gmail.com',
+           '$2y$10$3ncvKqst/S4s4WVLqEPwN.sjYgXZ0lC..Ozy8BuzgbGVmxlIY6aKq');
+
+create table inventories
+(
+    id         int auto_increment not null,
+    mail       varchar(255)       not null,
+    item       int                not null,
+    level_item int                not null,
+    amount     int                not null,
     primary key (id)
 ) engine = InnoDB;

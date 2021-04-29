@@ -22,10 +22,10 @@ function character()
 function resources()
 {
     $items = getItems();
-    $_POST['items'] = array();
-    foreach ($items as $item) {
-        if (!isset($_POST['items'][$item['type']])) $_POST['items'][$item['type']] = array();
-        array_push($_POST['items'][$item['type']], $item);
+    $_POST['lists'] = array();
+    foreach ($items as $item) { // Try par le type de l'item
+        if (!isset($_POST['lists'][$item['type']])) $_POST['lists'][$item['type']] = array();
+        array_push($_POST['lists'][$item['type']], $item);
     }
     require './view/resources.php';
 }
@@ -63,17 +63,10 @@ function slug($label)
     return str_replace(' ', '-', $label);
 }
 
-function getValue($var): int
+function getValue($item, $level): int
 {
-    $value = 0;
-    if (isset($_SESSION) && ((isset($_SESSION['items']) && isset($_SESSION['items'][$var]) || $_SESSION[$var]))) {
-        if ($var === 'moras') $value = $_SESSION[$var];
-        else $value = $_SESSION['items'][$var];
-    } elseif (isset($_COOKIE) && (isset($_COOKIE['item' . $var]) || isset($_COOKIE[$var]))) {
-        if ($var === 'moras') $value = $_COOKIE[$var];
-        else $value = $_COOKIE['item' . $var];
-    }
-    return $value;
+    if (!isset($_SESSION['Account'])) return 0;
+    return getInventory2($_SESSION['Account']['mail'], $item, $level)['amount'] ?? 0;
 }
 
 function secure($var): string

@@ -2,26 +2,17 @@
 ob_start(); ?>
 
     <div id="resources">
-        <div class="item-list-15 my-5">
-            <div class="text-center">
-                <img class='item-item' alt="moras" src="resources/images/items/Mora.png">
-                <div class="form-outline">
-                    <input id="moras" class="form-control text-center" type="number" value="<?= getValue('moras') ?>">
-                    <label for="moras" class="form-label"></label>
-                </div>
-            </div>
-        </div>
-        <?php foreach ($_POST['items'] as $list) : ?>
+        <?php foreach ($_POST['lists'] as $list) : ?>
             <div class="item-list-15 my-5">
                 <?php foreach ($list as $item) :
                     for ($i = 1; $i <= $item['rarity_max']; $i++) : ?>
                         <div class="text-center">
-                            <img class="item-item" alt="item<?= $item['id'] ?>"
+                            <img class="item-item" alt="<?= $item['id'] ?>"
                                  src="resources/images/items/<?= slug($item['label'] . $i) ?>.png">
                             <div class="form-outline">
-                                <input id="item<?= $item['id'] . '_' . $i ?>" class="form-control text-center"
-                                       type="number" value="<?= getValue($item['id'] . '_' . $i) ?>">
-                                <label for="item<?= $item['id'] . '_' . $i ?>" class="form-label"></label>
+                                <input id="<?= $item['id'] . '_' . $i ?>" class="form-control text-center"
+                                       type="number" value="<?= getValue($item['id'], $i) ?>">
+                                <label for="<?= $item['id'] . '_' . $i ?>" class="form-label"></label>
                             </div>
                         </div>
                     <?php endfor;

@@ -86,10 +86,10 @@ ob_start(); ?>
                                                 <label for="stone<?= $i - 1 ?>" class="form-label">Required</label>
                                             </div>
                                             <div class="col-4 col-md-3 form-outline item-have p-0">
-                                                <input id="item<?= $stone['id'] . '_' . $i ?>"
+                                                <input id="<?= $stone['id'] . '_' . $i ?>"
                                                        class="form-control active" type="number"
-                                                       value="<?= getValue('item' . $stone['id'] . '_' . $i) ?>">
-                                                <label for="item<?= $stone['id'] . '_' . $i ?>"
+                                                       value="<?= getValue($stone['id'], $i) ?>">
+                                                <label for="<?= $stone['id'] . '_' . $i ?>"
                                                        class="form-label">Have</label>
                                             </div>
                                         </div>
@@ -114,10 +114,10 @@ ob_start(); ?>
                                                        class="form-label">Required</label>
                                             </div>
                                             <div class="col-4 col-md-3 form-outline item-have p-0">
-                                                <input id="item<?= $_POST['lvl_id' . $i] . '_' . $j ?>"
+                                                <input id="<?= $_POST['lvl_id' . $i] . '_' . $j ?>"
                                                        class="form-control active" type="number"
-                                                       value="<?= getValue($_POST['lvl_id' . $i] . '_' . $j) ?>">
-                                                <label for="item<?= $_POST['lvl_id' . $i] . '_' . $j ?>"
+                                                       value="<?= getValue($_POST['lvl_id' . $i], $j) ?>">
+                                                <label for="<?= $_POST['lvl_id' . $i] . '_' . $j ?>"
                                                        class="form-label">Have</label>
                                             </div>
                                         </div>
@@ -138,9 +138,9 @@ ob_start(); ?>
                                         <label for="asc_xp1" class="form-label">Required</label>
                                     </div>
                                     <div class="col-4 col-md-3 form-outline item-have p-0">
-                                        <input id="xp1" class="form-control active" type="text"
-                                               value="<?= getValue('xp1') ?>">
-                                        <label for="xp1" class="form-label">Have</label>
+                                        <input id="64_1" class="form-control active" type="text"
+                                               value="<?= getValue('xp', 1) ?>">
+                                        <label for="64_1" class="form-label">Have</label>
                                     </div>
                                 </div>
                                 <div class="row my-2">
@@ -156,9 +156,9 @@ ob_start(); ?>
                                         <label for="asc_xp2" class="form-label">Required</label>
                                     </div>
                                     <div class="col-4 col-md-3 form-outline item-have p-0">
-                                        <input id="xp2" class="form-control active" type="text"
-                                               value="<?= getValue('xp2') ?>">
-                                        <label for="xp2" class="form-label">Have</label>
+                                        <input id="64_2" class="form-control active" type="text"
+                                               value="<?= getValue('xp', 2) ?>">
+                                        <label for="64_2" class="form-label">Have</label>
                                     </div>
                                 </div>
                                 <div class="row my-2">
@@ -173,15 +173,15 @@ ob_start(); ?>
                                         <label for="asc_xp3" class="form-label">Required</label>
                                     </div>
                                     <div class="col-4 col-md-3 form-outline item-have p-0">
-                                        <input id="xp3" class="form-control active" type="number"
-                                               value="<?= getValue('xp3') ?>">
-                                        <label for="xp3" class="form-label">Have</label>
+                                        <input id="64_3" class="form-control active" type="number"
+                                               value="<?= getValue('xp', 3) ?>">
+                                        <label for="64_3" class="form-label">Have</label>
                                     </div>
                                 </div>
                                 <hr class="my-2">
                                 <div class="row my-2">
                                     <div class="col-4 col-md-3 col-lg-2 div-item">
-                                        <img class="item-char" alt="" src="resources/images/items/Mora.png">
+                                        <img class="item-char" alt="" src="resources/images/items/Moras1.png">
                                     </div>
                                     <div class="col-md-3 col-lg-4 align-middle text-center d-none d-md-block"
                                          style="margin-top: 32px">Moras
@@ -191,9 +191,9 @@ ob_start(); ?>
                                         <label for="asc_moras" class="form-label">Required</label>
                                     </div>
                                     <div class="col-4 col-md-3 form-outline item-have p-0">
-                                        <input id="moras" class="form-control active" type="number"
-                                               value="<?= getValue('moras') ?>">
-                                        <label for="moras" class="form-label">Have</label>
+                                        <input id="63_1" class="form-control active" type="number"
+                                               value="<?= getValue('Moras', 1) ?>">
+                                        <label for="63_1" class="form-label">Have</label>
                                     </div>
                                 </div>
                             </div>
@@ -265,10 +265,10 @@ ob_start(); ?>
                                                        class="form-label">Required</label>
                                             </div>
                                             <div class="col-4 col-md-3 form-outline item-have p-0">
-                                                <input id="item<?= $_POST['tal_id' . $i] . '_' . $j ?>"
+                                                <input id="<?= $_POST['tal_id' . $i] . '_' . $j ?>"
                                                        class="form-control active" type="number"
-                                                       value="<?= getValue($_POST['tal_id' . $i] . '_' . $j) ?>">
-                                                <label for="item<?= $_POST['tal_id' . $i] . '_' . $j ?>"
+                                                       value="<?= getValue($_POST['tal_id' . $i],  $j) ?>">
+                                                <label for="<?= $_POST['tal_id' . $i] . '_' . $j ?>"
                                                        class="form-label">Have</label>
                                             </div>
                                         </div>
@@ -278,7 +278,7 @@ ob_start(); ?>
 
                                 <div class="row my-2">
                                     <div class="col-4 col-md-3 col-lg-2 div-item">
-                                        <img class="item-char" alt="" src="resources/images/items/Mora.png">
+                                        <img class="item-char" alt="" src="resources/images/items/Moras1.png">
                                     </div>
                                     <div class="col-md-3 col-lg-4 align-middle text-center d-none d-md-block"
                                          style="margin-top: 32px">Moras
@@ -288,9 +288,9 @@ ob_start(); ?>
                                         <label for="tal_moras" class="form-label">Required</label>
                                     </div>
                                     <div class="col-4 col-md-3 form-outline item-have p-0">
-                                        <input id="moras" class="form-control active" type="number"
-                                               value="<?= getValue('moras') ?>">
-                                        <label for="moras" class="form-label">Have</label>
+                                        <input id="63_1" class="form-control active" type="number"
+                                               value="<?= getValue('Moras', 1) ?>">
+                                        <label for="63_1" class="form-label">Have</label>
                                     </div>
                                 </div>
                                 <hr class="my-2">
@@ -307,9 +307,9 @@ ob_start(); ?>
                                         <label for="tal_crown" class="form-label">Required</label>
                                     </div>
                                     <div class="col-4 col-md-3 form-outline item-have p-0">
-                                        <input id="crown" class="form-control active" type="number"
-                                               value="<?= getValue('38_1') ?>">
-                                        <label for="crown" class="form-label">Have</label>
+                                        <input id="38_1" class="form-control active" type="number"
+                                               value="<?= getValue(38, 1) ?>">
+                                        <label for="38_1" class="form-label">Have</label>
                                     </div>
                                 </div>
                             </div>
