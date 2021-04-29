@@ -34,19 +34,28 @@
     <div class="container-fluid">
         <!-- Navbar brand -->
         <a class="navbar-brand" href="">
-            <img src="resources/images/logo.png" height="22" alt="logo" loading="lazy" style="margin-top: -3px;" />
+            <img src="resources/images/logo.png" height="22" alt="logo" loading="lazy" style="margin-top: -3px;">
         </a>
-        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01"
-                aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbar1"
+                aria-controls="navbar1" aria-expanded="false" aria-label="Toggle navigation">
             <i class="fas fa-bars"></i>
         </button>
-        <div class="collapse navbar-collapse" id="navbarExample01">
+        <div class="collapse navbar-collapse" id="navbar1">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item active"><a class="nav-link" aria-current="page" href="">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="resource">My resources</a></li>
             </ul>
 
             <ul class="navbar-nav d-flex flex-row">
+                <?php if (isset($_SESSION['Account'])) : ?>
+                    <li class="nav-item me-3 me-lg-0">
+                        <a class="nav-link" href="index.php?p=signOut">Sign out</a>
+                    </li>
+                <?php else : ?>
+                    <li class="nav-item me-3 me-lg-0">
+                        <a class="nav-link" href="" data-mdb-toggle="modal" data-mdb-target="#signIn">Sign In</a>
+                    </li>
+                <?php endif; ?>
                 <li class="nav-item me-3 me-lg-0">
                     <a class="nav-link" href="https://lexiquejaponais.fr" rel="nofollow" target="_blank">
                         <i class="fas fa-dragon"></i>
@@ -62,7 +71,123 @@
     </div>
 </nav>
 
+<div class="modal fade" id="signIn" tabindex="-1" aria-labelledby="signIn" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-body p-4">
+                <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link active" id="mdb-tab-login" data-mdb-toggle="pill" href="#pills-login"
+                           role="tab" aria-controls="pills-login" aria-selected="true">Login</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="mdb-tab-register" data-mdb-toggle="pill" href="#pills-register"
+                           role="tab" aria-controls="pills-register" aria-selected="false">Register</a>
+                    </li>
+                </ul>
+
+                <div class="tab-content">
+                    <div class="tab-pane fade active show" id="pills-login" role="tabpanel"
+                         aria-labelledby="mdb-tab-login">
+                        <form method="post" action="index.php?p=signIn">
+                            <!--div class="text-center mb-3">
+                                <p>Sign in with:</p>
+                                <button type="button" class="btn btn-primary btn-floating mx-1">
+                                    <i class="fab fa-facebook-f"></i>
+                                </button>
+
+                                <button type="button" class="btn btn-primary btn-floating mx-1">
+                                    <i class="fab fa-google"></i>
+                                </button>
+
+                                <button type="button" class="btn btn-primary btn-floating mx-1">
+                                    <i class="fab fa-twitter"></i>
+                                </button>
+
+                                <button type="button" class="btn btn-primary btn-floating mx-1">
+                                    <i class="fab fa-github"></i>
+                                </button>
+                            </div>
+
+                            <p class="text-center">or:</p-->
+
+                            <!-- Email input -->
+                            <div class="form-outline mb-4">
+                                <input type="email" id="loginMail" name="mail" class="form-control" required>
+                                <label class="form-label" for="loginMail">Email</label>
+                            </div>
+
+                            <!-- Password input -->
+                            <div class="form-outline mb-4">
+                                <input type="password" id="loginPassword" name="pass" class="form-control" required>
+                                <label class="form-label" for="loginPassword">Password</label>
+                            </div>
+
+                            <!-- Submit button -->
+                            <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
+                            <!-- Register buttons -->
+                            <!--div class="d-flex justify-content-between justify-content-md-around">
+                                <a href="#!">Forgot password?</a>
+                                <div>
+                                    <p>Not a member?
+                                        <a data-mdb-toggle="pill" href="#pills-register" role="tab"
+                                           aria-controls="pills-register" aria-selected="false">Register</a>
+                                    </p>
+                                </div>
+                            </div-->
+                        </form>
+                    </div>
+
+                    <div class="tab-pane fade" id="pills-register" role="tabpanel" aria-labelledby="mdb-tab-register">
+                        <form method="post" action="index.php?p=signUp">
+                            <!--div class="text-center mb-3">
+                                <p>Sign up with:</p>
+                                <button type="button" class="btn btn-primary btn-floating mx-1">
+                                    <i class="fab fa-facebook-f"></i>
+                                </button>
+
+                                <button type="button" class="btn btn-primary btn-floating mx-1">
+                                    <i class="fab fa-google"></i>
+                                </button>
+
+                                <button type="button" class="btn btn-primary btn-floating mx-1">
+                                    <i class="fab fa-twitter"></i>
+                                </button>
+
+                                <button type="button" class="btn btn-primary btn-floating mx-1">
+                                    <i class="fab fa-github"></i>
+                                </button>
+                            </div>
+
+                            <p class="text-center">or:</p-->
+
+                            <!-- Pseudo input -->
+                            <div class="form-outline mb-4">
+                                <input type="text" id="registerPseudo" name="pseudo" class="form-control">
+                                <label class="form-label" for="registerPseudo">Pseudo</label>
+                            </div>
+                            <!-- Email input -->
+                            <div class="form-outline mb-4">
+                                <input type="email" id="registerEmail" name="mail" class="form-control">
+                                <label class="form-label" for="registerEmail">Email</label>
+                            </div>
+                            <!-- Password input -->
+                            <div class="form-outline mb-4">
+                                <input type="password" id="registerPassword" name="pass" class="form-control">
+                                <label class="form-label" for="registerPassword">Password</label>
+                            </div>
+                            <!-- Submit button -->
+                            <button type="submit" class="btn btn-primary btn-block mb-1">Sign in</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div id="content" class="container">
+    <?= flash() ?>
     <?= $content ?>
 </div>
 </body>

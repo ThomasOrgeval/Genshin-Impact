@@ -7,6 +7,7 @@ require __DIR__ . '/types.php';
 require __DIR__ . '/weapons.php';
 require __DIR__ . '/ascensions.php';
 require __DIR__ . '/talents.php';
+require __DIR__ . '/user.php';
 
 function db(): PDO
 {

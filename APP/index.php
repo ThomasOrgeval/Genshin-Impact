@@ -1,14 +1,16 @@
 <?php
 
 mb_internal_encoding("UTF-8");
+session_start();
 
 require './controller/main.php';
+require './controller/libs/flash.php';
 
 try {
     if (isset($_GET['p'])) {
         switch ($_GET['p']) {
-            case 'accueil':
-                accueil();
+            case 'home':
+                home();
                 break;
             case 'character':
                 character();
@@ -16,8 +18,17 @@ try {
             case 'resources':
                 resources();
                 break;
+            case 'signIn':
+                signIn();
+                break;
+            case 'signUp':
+                signUp();
+                break;
+            case 'signOut':
+                signOut();
+                break;
         }
-    } else accueil();
+    } else home();
 } catch (Exception $e) {
 
 }
