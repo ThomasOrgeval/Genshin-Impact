@@ -220,3 +220,12 @@ values (1, '2', 0, 3, 1, 6, 1, 12500, 0),
        (7, '8', 1, 6, 3, 6, 3, 260000, 0),
        (8, '9', 2, 12, 3, 9, 3, 450000, 0),
        (9, '10', 2, 16, 3, 12, 3, 700000, 1);
+
+create table user
+(
+    id     int auto_increment not null,
+    pseudo varchar(60)        not null,
+    mail   varchar(255)       not null,
+    pass   varchar(100)       not null,
+    primary key (id)
+) engine = InnoDB;
