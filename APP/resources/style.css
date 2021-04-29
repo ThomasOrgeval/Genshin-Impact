@@ -65,7 +65,7 @@
     }
 }
 
-@media (max-width: 772px) {
+@media (max-width: 768px) {
     .item-list-15 {
         grid-template-columns: repeat(4, 1fr);
     }
