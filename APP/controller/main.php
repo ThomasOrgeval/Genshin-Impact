@@ -65,7 +65,10 @@ function signUp()
 function signIn()
 {
     if ($_SESSION['Account'] = getUser(secure($_POST['mail']), $_POST['pass'])) setFlash('Sign in!');
-    else setFlash('Bad request :(', 'danger');
+    else {
+        setFlash('Bad request :(', 'danger');
+        unset($_SESSION);
+    }
     header('Location:home');
 }
 

@@ -12,7 +12,7 @@
     <meta property="og:title" content="Genshin API">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://genshin.thomasorgeval.fr">
-    <meta property="og:image" content="resources/images/elements/All.png">
+    <meta property="og:image" content="https://genshin.thomasorgeval.fr/resources/images/elements/All.png">
     <!--meta property="og:description" content="Site description"-->
     <title><?= $title ?? 'Genshin Impact API' ?></title>
     <link rel="shortcut icon" type="image" href="resources/images/elements/All.png">
@@ -183,9 +183,9 @@
                             </div>
                             <!-- Password input -->
                             <div class="form-outline mb-4">
-                                <input type="password" id="registerPassword" name="pass"
-                                       class="form-control bg-dark text-white-50" required>
-                                <label class="form-label bg-dark text-white-50" for="registerPassword">Password</label>
+                                <input type="password" id="registerPassword" name="pass" autocomplete="new-password"
+                                       class="form-control bg-dark text-white-50" minlength="8" required>
+                                <label class="form-label bg-dark text-white-50" for="registerPassword">Password (8 Characters min)</label>
                             </div>
                             <!-- Submit button -->
                             <button type="submit" class="btn btn-primary btn-block mb-1">Sign in</button>
