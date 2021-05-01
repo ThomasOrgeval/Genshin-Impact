@@ -61,13 +61,16 @@ ob_start(); ?>
                                     </div>
                                 </div>
                             </div>
-                            <div class="m-2" style="font-size: 30px">
-                                <ul class="list-unstyled d-flex justify-content-evenly justify-content-md-start">
-                                    <li class="me-md-3" onclick="addList('ascension')" data-mdb-toggle="tooltip" title="Create your own!">
-                                        <i class="fas fa-list-ul"></i>
-                                    </li>
-                                </ul>
-                            </div>
+                            <?php if (isset($_SESSION['Account'])) : ?>
+                                <div class="m-2" style="font-size: 30px">
+                                    <ul class="list-unstyled d-flex justify-content-evenly justify-content-md-start">
+                                        <li class="me-md-3" onclick="addList('ascension')" data-mdb-toggle="tooltip"
+                                            title="Create your own!">
+                                            <i class="fas fa-list-ul"></i>
+                                        </li>
+                                    </ul>
+                                </div>
+                            <?php endif; ?>
 
                             <div id="ascension">
                                 <?php if (isset($_POST['stones'])) :
@@ -138,8 +141,8 @@ ob_start(); ?>
                                         <label for="asc_xp1" class="form-label">Required</label>
                                     </div>
                                     <div class="col-4 col-md-3 form-outline item-have p-0">
-                                        <input id="64_1" class="form-control active" type="text"
-                                               value="<?= getValue('xp', 1) ?>">
+                                        <input id="64_1" class="form-control active" type="number"
+                                               value="<?= getValue(64, 1) ?>">
                                         <label for="64_1" class="form-label">Have</label>
                                     </div>
                                 </div>
@@ -156,8 +159,8 @@ ob_start(); ?>
                                         <label for="asc_xp2" class="form-label">Required</label>
                                     </div>
                                     <div class="col-4 col-md-3 form-outline item-have p-0">
-                                        <input id="64_2" class="form-control active" type="text"
-                                               value="<?= getValue('xp', 2) ?>">
+                                        <input id="64_2" class="form-control active" type="number"
+                                               value="<?= getValue(64, 2) ?>">
                                         <label for="64_2" class="form-label">Have</label>
                                     </div>
                                 </div>
@@ -174,7 +177,7 @@ ob_start(); ?>
                                     </div>
                                     <div class="col-4 col-md-3 form-outline item-have p-0">
                                         <input id="64_3" class="form-control active" type="number"
-                                               value="<?= getValue('xp', 3) ?>">
+                                               value="<?= getValue(64, 3) ?>">
                                         <label for="64_3" class="form-label">Have</label>
                                     </div>
                                 </div>
@@ -192,7 +195,7 @@ ob_start(); ?>
                                     </div>
                                     <div class="col-4 col-md-3 form-outline item-have p-0">
                                         <input id="63_1" class="form-control active" type="number"
-                                               value="<?= getValue('Moras', 1) ?>">
+                                               value="<?= getValue(63, 1) ?>">
                                         <label for="63_1" class="form-label">Have</label>
                                     </div>
                                 </div>
@@ -239,13 +242,16 @@ ob_start(); ?>
                                     </div>
                                 </div>
                             </div>
-                            <div class="m-2" style="font-size: 30px">
-                                <ul class="list-unstyled d-flex justify-content-evenly justify-content-md-start">
-                                    <li class="me-md-3" onclick="addList('talent')" data-mdb-toggle="tooltip" title="Create your own!">
-                                        <i class="fas fa-list-ul"></i>
-                                    </li>
-                                </ul>
-                            </div>
+                            <?php if (isset($_SESSION['Account'])) : ?>
+                                <div class="m-2" style="font-size: 30px">
+                                    <ul class="list-unstyled d-flex justify-content-evenly justify-content-md-start">
+                                        <li class="me-md-3" onclick="addList('talent')" data-mdb-toggle="tooltip"
+                                            title="Create your own!">
+                                            <i class="fas fa-list-ul"></i>
+                                        </li>
+                                    </ul>
+                                </div>
+                            <?php endif; ?>
 
                             <div id="talent">
                                 <?php $list = array(['book0', 'book1', 'book2'], ['tal_item0', 'tal_item1', 'tal_item2'], ['tal_core']);
@@ -267,7 +273,7 @@ ob_start(); ?>
                                             <div class="col-4 col-md-3 form-outline item-have p-0">
                                                 <input id="<?= $_POST['tal_id' . $i] . '_' . $j ?>"
                                                        class="form-control active" type="number"
-                                                       value="<?= getValue($_POST['tal_id' . $i],  $j) ?>">
+                                                       value="<?= getValue($_POST['tal_id' . $i], $j) ?>">
                                                 <label for="<?= $_POST['tal_id' . $i] . '_' . $j ?>"
                                                        class="form-label">Have</label>
                                             </div>
@@ -289,7 +295,7 @@ ob_start(); ?>
                                     </div>
                                     <div class="col-4 col-md-3 form-outline item-have p-0">
                                         <input id="63_1" class="form-control active" type="number"
-                                               value="<?= getValue('Moras', 1) ?>">
+                                               value="<?= getValue(63, 1) ?>">
                                         <label for="63_1" class="form-label">Have</label>
                                     </div>
                                 </div>

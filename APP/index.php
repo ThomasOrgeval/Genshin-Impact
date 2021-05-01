@@ -3,8 +3,12 @@
 mb_internal_encoding("UTF-8");
 session_start();
 
-require './controller/main.php';
-require './controller/libs/flash.php';
+require __DIR__ . '/controller/main.php';
+require __DIR__ . '/controller/libs/flash.php';
+
+if (isset($_SESSION['Account']['mail']) && existQueue($_SESSION['Account']['mail'])) {
+    $_POST['queue'] = getQueues($_SESSION['Account']['mail']);
+}
 
 try {
     if (isset($_GET['p'])) {

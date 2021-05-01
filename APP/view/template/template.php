@@ -10,7 +10,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?= $title ?? 'Genshin Impact API' ?></title>
-    <link rel="shortcut icon" type="image" href="resources/images/logo.png">
+    <link rel="shortcut icon" type="image" href="resources/images/elements/All.png">
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"

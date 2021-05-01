@@ -101,7 +101,31 @@ function showCharacterItem(item) {
 
 function addList(id) {
     let inputs = $('#' + id + ' .item-required :input');
+    let ids = $('#' + id + ' .item-have :input');
     for (let i = 0; i < inputs.length; i++) {
-        console.log(number($('#' + inputs[i].id).val()));
+        $.post(
+            'ajax/character/queue.php',
+            {
+                item: ids[i].id,
+                val: number($('#' + inputs[i].id).val())
+            },
+            function (data) {
+                console.log(data);
+            },
+            'html'
+        );
     }
+}
+
+function deleteList(id) {
+    $.post(
+        'ajax/widget/queue.php',
+        {
+            item: id
+        },
+        function (data) {
+
+        },
+        'html'
+    );
 }
