@@ -126,7 +126,7 @@ function clearQueue() {
     );
 }
 
-function deleteQueue(id) {
+function deleteItemQueue(id) {
     $.post(
         'ajax/queue/delete.php',
         {

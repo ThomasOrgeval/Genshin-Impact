@@ -10,7 +10,7 @@ ob_start(); ?>
                             <img class="item-item" alt="<?= $item['id'] ?>"
                                  src="resources/images/items/<?= slug($item['label'] . $i) ?>.png">
                             <div class="form-outline">
-                                <input id="<?= $item['id'] . '_' . $i ?>" class="form-control text-center"
+                                <input id="<?= $item['id'] . '_' . $i ?>" class="form-control text-center text-white-50"
                                        type="number" value="<?= getValue($item['id'], $i) ?>">
                                 <label for="<?= $item['id'] . '_' . $i ?>" class="form-label"></label>
                             </div>

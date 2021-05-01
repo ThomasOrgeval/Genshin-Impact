@@ -29,12 +29,12 @@
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
-<body>
-<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+<body class="bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top">
     <div class="container-fluid">
         <!-- Navbar brand -->
-        <a class="navbar-brand" href="">
-            <img src="resources/images/logo.png" height="22" alt="logo" loading="lazy" style="margin-top: -3px;">
+        <a class="navbar-brand me-0" href="">
+            <img src="resources/images/elements/All.png" height="22" alt="logo" style="margin-top: -3px">
         </a>
         <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbar1"
                 aria-controls="navbar1" aria-expanded="false" aria-label="Toggle navigation">
@@ -59,10 +59,11 @@
                             <div class="dropdown">
                                 <a class="nav-link" role="button" id="queueList" data-mdb-toggle="dropdown"
                                    aria-expanded="false"><i class="fas fa-folder"></i></a>
-                                <ul class="dropdown-menu dropdown-menu-md-end" aria-labelledby="queueList">
-                                    <li class="d-flex justify-content-evenly">
+                                <ul class="dropdown-menu dropdown-menu-md-end bg-dark"
+                                    aria-labelledby="queueList" style="width: 250px">
+                                    <li class="d-flex justify-content-evenly faded-dark">
                                         <a href="queue">
-                                            <i class="far fa-eye text-black" style="font-size: 180%"></i>
+                                            <i class="far fa-eye text-white" style="font-size: 180%"></i>
                                         </a>
                                         <?php if (completeQueue($_SESSION['Account']['mail'])) : ?>
                                             <a href="queue_complete" class="click">
@@ -75,12 +76,14 @@
                                     </li>
                                     <hr class="m-0">
                                     <?php foreach ($_POST['queue'] as $item) : ?>
-                                        <li class="d-flex" style="height: 50px">
+                                        <li class="d-flex faded-dark" style="height: 50px">
                                             <img src="resources/images/items/<?= slug(getItem($item['item'])['label']) . $item['level_item'] ?>.png"
                                                  alt="item" style="height: 50px">
                                             <div class="row w-100 my-auto">
-                                                <span class="col text-center"><?= $item['amount'] ?></span>
-                                                <span class="col text-center"><?= getValue($item['item'], $item['level_item']) ?></span>
+                                                <span class="col text-center text-white-50"><?= $item['amount'] ?></span>
+                                                <span class="col text-center text-white-50">
+                                                    <?= getValue($item['item'], $item['level_item']) ?>
+                                                </span>
                                             </div>
                                         </li>
                                     <?php endforeach; ?>
@@ -111,7 +114,7 @@
 
 <div class="modal fade" id="signIn" tabindex="-1" aria-labelledby="signIn" aria-hidden="true">
     <div class="modal-dialog modal-lg">
-        <div class="modal-content">
+        <div class="modal-content bg-dark">
             <div class="modal-body p-4">
                 <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
                     <li class="nav-item" role="presentation">
@@ -128,37 +131,19 @@
                     <div class="tab-pane fade active show" id="pills-login" role="tabpanel"
                          aria-labelledby="mdb-tab-login">
                         <form method="post" action="index.php?p=signIn">
-                            <!--div class="text-center mb-3">
-                                <p>Sign in with:</p>
-                                <button type="button" class="btn btn-primary btn-floating mx-1">
-                                    <i class="fab fa-facebook-f"></i>
-                                </button>
-
-                                <button type="button" class="btn btn-primary btn-floating mx-1">
-                                    <i class="fab fa-google"></i>
-                                </button>
-
-                                <button type="button" class="btn btn-primary btn-floating mx-1">
-                                    <i class="fab fa-twitter"></i>
-                                </button>
-
-                                <button type="button" class="btn btn-primary btn-floating mx-1">
-                                    <i class="fab fa-github"></i>
-                                </button>
-                            </div>
-
-                            <p class="text-center">or:</p-->
 
                             <!-- Email input -->
                             <div class="form-outline mb-4">
-                                <input type="email" id="loginMail" name="mail" class="form-control" required>
-                                <label class="form-label" for="loginMail">Email</label>
+                                <input type="email" id="loginMail" name="mail"
+                                       class="form-control bg-dark text-white-50" required>
+                                <label class="form-label bg-dark text-white-50" for="loginMail">Email</label>
                             </div>
 
                             <!-- Password input -->
                             <div class="form-outline mb-4">
-                                <input type="password" id="loginPassword" name="pass" class="form-control" required>
-                                <label class="form-label" for="loginPassword">Password</label>
+                                <input type="password" id="loginPassword" name="pass"
+                                       class="form-control bg-dark text-white-50" required>
+                                <label class="form-label bg-dark text-white-50" for="loginPassword">Password</label>
                             </div>
 
                             <!-- Submit button -->
@@ -178,41 +163,24 @@
 
                     <div class="tab-pane fade" id="pills-register" role="tabpanel" aria-labelledby="mdb-tab-register">
                         <form method="post" action="index.php?p=signUp">
-                            <!--div class="text-center mb-3">
-                                <p>Sign up with:</p>
-                                <button type="button" class="btn btn-primary btn-floating mx-1">
-                                    <i class="fab fa-facebook-f"></i>
-                                </button>
-
-                                <button type="button" class="btn btn-primary btn-floating mx-1">
-                                    <i class="fab fa-google"></i>
-                                </button>
-
-                                <button type="button" class="btn btn-primary btn-floating mx-1">
-                                    <i class="fab fa-twitter"></i>
-                                </button>
-
-                                <button type="button" class="btn btn-primary btn-floating mx-1">
-                                    <i class="fab fa-github"></i>
-                                </button>
-                            </div>
-
-                            <p class="text-center">or:</p-->
 
                             <!-- Pseudo input -->
                             <div class="form-outline mb-4">
-                                <input type="text" id="registerPseudo" name="pseudo" class="form-control">
-                                <label class="form-label" for="registerPseudo">Pseudo</label>
+                                <input type="text" id="registerPseudo" name="pseudo"
+                                       class="form-control bg-dark text-white-50" required>
+                                <label class="form-label bg-dark text-white-50" for="registerPseudo">Pseudo</label>
                             </div>
                             <!-- Email input -->
                             <div class="form-outline mb-4">
-                                <input type="email" id="registerEmail" name="mail" class="form-control">
-                                <label class="form-label" for="registerEmail">Email</label>
+                                <input type="email" id="registerEmail" name="mail"
+                                       class="form-control bg-dark text-white-50" required>
+                                <label class="form-label bg-dark text-white-50" for="registerEmail">Email</label>
                             </div>
                             <!-- Password input -->
                             <div class="form-outline mb-4">
-                                <input type="password" id="registerPassword" name="pass" class="form-control">
-                                <label class="form-label" for="registerPassword">Password</label>
+                                <input type="password" id="registerPassword" name="pass"
+                                       class="form-control bg-dark text-white-50" required>
+                                <label class="form-label bg-dark text-white-50" for="registerPassword">Password</label>
                             </div>
                             <!-- Submit button -->
                             <button type="submit" class="btn btn-primary btn-block mb-1">Sign in</button>
@@ -230,8 +198,8 @@
 </div>
 </body>
 
-<footer class="bg-light text-lg-start">
-    <div class="text-center py-4 align-items-center">
+<footer class="bg-dark text-lg-start">
+    <div class="text-center py-4 align-items-center" style="background-color: rgba(0, 0, 0, 0.2);">
         <p>My different media</p>
         <a href="https://lexiquejaponais.fr" class="btn btn-primary m-1" rel="nofollow" target="_blank" role="button">
             <i class="fas fa-dragon"></i>
@@ -243,8 +211,9 @@
     </div>
 
     <!-- Copyright -->
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-        © 2021 Copyright:<a class="text-dark" target="_blank" href="https://thomasorgeval.fr/">Thomas Orgeval</a>
+    <div class="text-center p-3 faded-dark">
+        © 2021 Copyright:<a class="text-white-50" target="_blank" href="https://thomasorgeval.fr/">Thomas & Léo
+            Orgeval</a>
     </div>
     <!-- Copyright -->
 </footer>

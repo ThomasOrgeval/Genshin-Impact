@@ -43,6 +43,10 @@
     cursor: pointer;
 }
 
+.faded-dark {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
 @media (max-width: 1360px) {
     .item-list-15 {
         grid-template-columns: repeat(7, 1fr);

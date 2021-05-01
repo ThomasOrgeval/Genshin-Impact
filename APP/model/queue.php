@@ -68,7 +68,7 @@ function clearQueue($mail)
 function completeQueue($mail)
 {
     $mail = db()->quote($mail);
-    return db()->query("select sum(q.amount - ifnull(i.amount, 0) <= 0) as reste from queue q
+    return db()->query("select sum(q.amount - ifnull(i.amount, 0) <= 0) = count(q.id) as reste from queue q
         left join inventories i on q.item = i.item and q.level_item = i.level_item 
         where q.mail like $mail")->fetch()['reste'];
 }
