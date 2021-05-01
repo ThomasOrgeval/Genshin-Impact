@@ -87,11 +87,11 @@ function costTalent(tal_min, tal_max) {
 }
 
 function escapeNumber(number) {
-    return number.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 }
 
 function number(number) {
-    return Number(number.replaceAll(',', ''));
+    return Number(number.replaceAll(' ', ''));
 }
 
 function showCharacterItem(item) {
