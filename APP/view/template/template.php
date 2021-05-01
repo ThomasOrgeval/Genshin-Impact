@@ -50,10 +50,17 @@
 
             <ul class="navbar-nav d-flex flex-row">
                 <?php if (isset($_SESSION['Account'])) : ?>
-                    <li class="nav-item me-3 me-lg-0">
+                    <li id="logout" class="nav-item me-3 me-lg-0">
                         <a class="nav-link" href="index.php?p=signOut">Sign out</a>
                     </li>
-                <?php else : ?>
+                    <?php if (isset($_POST['queue'])) : ?>
+                    <li id="queue" class="nav-item me-3 me-lg-0">
+                        <a class="nav-link">
+                            <i class="fas fa-folder"></i>
+                        </a>
+                    </li>
+                    <?php endif;
+                else : ?>
                     <li class="nav-item me-3 me-lg-0">
                         <a class="nav-link" href="" data-mdb-toggle="modal" data-mdb-target="#signIn">Sign In</a>
                     </li>

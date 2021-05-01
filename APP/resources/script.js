@@ -111,6 +111,13 @@ function addList(id) {
             },
             function (data) {
                 console.log(data);
+                if (!('#queue').length) {
+                    $('#logout').after('<li id="queue" class="nav-item me-3 me-lg-0">\n' +
+                        '                        <a class="nav-link">\n' +
+                        '                            <i class="fas fa-folder"></i>\n' +
+                        '                        </a>\n' +
+                        '                    </li>')
+                }
             },
             'html'
         );

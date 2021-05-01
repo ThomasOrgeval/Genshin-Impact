@@ -66,7 +66,7 @@ ob_start(); ?>
                                     <ul class="list-unstyled d-flex justify-content-evenly justify-content-md-start">
                                         <li class="me-md-3" onclick="addList('ascension')" data-mdb-toggle="tooltip"
                                             title="Create your own!">
-                                            <i class="fas fa-list-ul"></i>
+                                            <i class="fas fa-file-import"></i>
                                         </li>
                                     </ul>
                                 </div>
@@ -247,7 +247,7 @@ ob_start(); ?>
                                     <ul class="list-unstyled d-flex justify-content-evenly justify-content-md-start">
                                         <li class="me-md-3" onclick="addList('talent')" data-mdb-toggle="tooltip"
                                             title="Create your own!">
-                                            <i class="fas fa-list-ul"></i>
+                                            <i class="fas fa-file-import"></i>
                                         </li>
                                     </ul>
                                 </div>

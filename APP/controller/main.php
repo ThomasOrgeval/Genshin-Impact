@@ -5,6 +5,9 @@ require './model/db.php';
 function home()
 {
     $_POST['characters'] = getCharacters();
+    if (isset($_SESSION['Account']['mail']) && existQueue($_SESSION['Account']['mail'])) {
+        $_POST['queue'] = getQueues($_SESSION['Account']['mail']);
+    }
     require './view/accueil.php';
 }
 
@@ -16,6 +19,10 @@ function character()
         unset($_POST['lvl1']);
         unset($_POST['lvl_rar1']);
     }
+
+    if (isset($_SESSION['Account']['mail']) && existQueue($_SESSION['Account']['mail'])) {
+        $_POST['queue'] = getQueues($_SESSION['Account']['mail']);
+    }
     require './view/character.php';
 }
 
@@ -26,6 +33,10 @@ function resources()
     foreach ($items as $item) { // Try par le type de l'item
         if (!isset($_POST['lists'][$item['type']])) $_POST['lists'][$item['type']] = array();
         array_push($_POST['lists'][$item['type']], $item);
+    }
+
+    if (isset($_SESSION['Account']['mail']) && existQueue($_SESSION['Account']['mail'])) {
+        $_POST['queue'] = getQueues($_SESSION['Account']['mail']);
     }
     require './view/resources.php';
 }
