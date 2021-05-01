@@ -41,4 +41,4 @@ ob_start(); ?>
     </div>
 
 <?php $content = ob_get_clean();
-require('./view/template/template.php');
+require(__DIR__ . '/template/template.php');

@@ -8,7 +8,7 @@ function home()
     if (isset($_SESSION['Account']['mail']) && existQueue($_SESSION['Account']['mail'])) {
         $_POST['queue'] = getQueues($_SESSION['Account']['mail']);
     }
-    require './view/accueil.php';
+    require __DIR__ . '/../view/accueil.php';
 }
 
 function character()
@@ -23,7 +23,7 @@ function character()
     if (isset($_SESSION['Account']['mail']) && existQueue($_SESSION['Account']['mail'])) {
         $_POST['queue'] = getQueues($_SESSION['Account']['mail']);
     }
-    require './view/character.php';
+    require __DIR__ . '/../view/character.php';
 }
 
 function resources()
@@ -38,7 +38,13 @@ function resources()
     if (isset($_SESSION['Account']['mail']) && existQueue($_SESSION['Account']['mail'])) {
         $_POST['queue'] = getQueues($_SESSION['Account']['mail']);
     }
-    require './view/resources.php';
+    require __DIR__ . '/../view/resources.php';
+}
+
+function queue()
+{
+    $_POST['lists'] = getQueues($_SESSION['Account']['mail']);
+    require __DIR__ . '/../view/queue.php';
 }
 
 function signUp()
@@ -47,7 +53,7 @@ function signUp()
     $pseudo = secure($_POST['pseudo']);
     $pass = password_hash($_POST['pass'], PASSWORD_DEFAULT);
 
-    if (!empty($pseudo) && !empty($pass) && !empty($mail) && verif_mail($mail) && uniqueMail($mail)) {
+    if (!empty($pseudo) && !empty($pass) && !empty($mail) && verify_mail($mail) && uniqueMail($mail)) {
         setUser($mail, $pass, $pseudo);
         signIn();
     } else {
@@ -69,6 +75,15 @@ function signOut()
     header('Location:home');
 }
 
+function queue_complete()
+{
+    if (completeQueue($_SESSION['Account']['mail'])) {
+        emptyQueue($_SESSION['Account']['mail']);
+        clearQueue($_SESSION['Account']['mail']);
+    } else setFlash('you do not have the necessary resources', 'danger');
+    header('Location:home');
+}
+
 function slug($label)
 {
     return str_replace(' ', '-', $label);
@@ -87,7 +102,7 @@ function secure($var): string
     return strip_tags($var);
 }
 
-function verif_mail($mail)
+function verify_mail($mail): bool
 {
     $isValid = true;
     $atIndex = strrpos($mail, "@");

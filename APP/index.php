@@ -27,6 +27,12 @@ try {
             case 'signOut':
                 signOut();
                 break;
+            case 'queue':
+                queue();
+                break;
+            case 'queue_complete':
+                queue_complete();
+                break;
         }
     } else home();
 } catch (Exception $e) {

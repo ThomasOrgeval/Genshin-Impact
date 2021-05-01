@@ -53,13 +53,42 @@
                     <li id="logout" class="nav-item me-3 me-lg-0">
                         <a class="nav-link" href="index.php?p=signOut">Sign out</a>
                     </li>
+
                     <?php if (isset($_POST['queue'])) : ?>
-                    <li id="queue" class="nav-item me-3 me-lg-0">
-                        <a class="nav-link">
-                            <i class="fas fa-folder"></i>
-                        </a>
-                    </li>
+                        <li id="queue" class="nav-item me-3 me-lg-0">
+                            <div class="dropdown">
+                                <a class="nav-link" role="button" id="queueList" data-mdb-toggle="dropdown"
+                                   aria-expanded="false"><i class="fas fa-folder"></i></a>
+                                <ul class="dropdown-menu dropdown-menu-md-end" aria-labelledby="queueList">
+                                    <li class="d-flex justify-content-evenly">
+                                        <a href="queue">
+                                            <i class="far fa-eye text-black" style="font-size: 180%"></i>
+                                        </a>
+                                        <?php if (completeQueue($_SESSION['Account']['mail'])) : ?>
+                                            <a href="queue_complete" class="click">
+                                                <i class="fas fa-check text-success" style="font-size: 180%"></i>
+                                            </a>
+                                        <?php endif; ?>
+                                        <a onclick="clearQueue()" class="click">
+                                            <i class="fas fa-times text-danger" style="font-size: 180%"></i>
+                                        </a>
+                                    </li>
+                                    <hr class="m-0">
+                                    <?php foreach ($_POST['queue'] as $item) : ?>
+                                        <li class="d-flex" style="height: 50px">
+                                            <img src="resources/images/items/<?= slug(getItem($item['item'])['label']) . $item['level_item'] ?>.png"
+                                                 alt="item" style="height: 50px">
+                                            <div class="row w-100 my-auto">
+                                                <span class="col text-center"><?= $item['amount'] ?></span>
+                                                <span class="col text-center"><?= getValue($item['item'], $item['level_item']) ?></span>
+                                            </div>
+                                        </li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            </div>
+                        </li>
                     <?php endif;
+
                 else : ?>
                     <li class="nav-item me-3 me-lg-0">
                         <a class="nav-link" href="" data-mdb-toggle="modal" data-mdb-target="#signIn">Sign In</a>

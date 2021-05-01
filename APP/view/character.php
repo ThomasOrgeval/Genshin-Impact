@@ -64,7 +64,7 @@ ob_start(); ?>
                             <?php if (isset($_SESSION['Account'])) : ?>
                                 <div class="m-2" style="font-size: 30px">
                                     <ul class="list-unstyled d-flex justify-content-evenly justify-content-md-start">
-                                        <li class="me-md-3" onclick="addList('ascension')" data-mdb-toggle="tooltip"
+                                        <li class="me-md-3" onclick="addQueue('ascension')" data-mdb-toggle="tooltip"
                                             title="Create your own!">
                                             <i class="fas fa-file-import"></i>
                                         </li>
@@ -245,7 +245,7 @@ ob_start(); ?>
                             <?php if (isset($_SESSION['Account'])) : ?>
                                 <div class="m-2" style="font-size: 30px">
                                     <ul class="list-unstyled d-flex justify-content-evenly justify-content-md-start">
-                                        <li class="me-md-3" onclick="addList('talent')" data-mdb-toggle="tooltip"
+                                        <li class="me-md-3" onclick="addQueue('talent')" data-mdb-toggle="tooltip"
                                             title="Create your own!">
                                             <i class="fas fa-file-import"></i>
                                         </li>
@@ -327,4 +327,4 @@ ob_start(); ?>
     </div>
 
 <?php $content = ob_get_clean();
-require('./view/template/template.php');
+require(__DIR__ . '/template/template.php');

@@ -99,39 +99,38 @@ function showCharacterItem(item) {
     else item.parents(':eq(1)').removeClass('d-none');
 }
 
-function addList(id) {
+function addQueue(id) {
     let inputs = $('#' + id + ' .item-required :input');
     let ids = $('#' + id + ' .item-have :input');
     for (let i = 0; i < inputs.length; i++) {
-        $.post(
-            'ajax/character/queue.php',
-            {
-                item: ids[i].id,
-                val: number($('#' + inputs[i].id).val())
-            },
-            function (data) {
-                console.log(data);
-                if (!('#queue').length) {
-                    $('#logout').after('<li id="queue" class="nav-item me-3 me-lg-0">\n' +
-                        '                        <a class="nav-link">\n' +
-                        '                            <i class="fas fa-folder"></i>\n' +
-                        '                        </a>\n' +
-                        '                    </li>')
-                }
-            },
-            'html'
-        );
+        if (number($('#' + inputs[i].id).val()) !== 0) {
+            $.post(
+                'ajax/character/queue.php',
+                {
+                    item: ids[i].id,
+                    val: number($('#' + inputs[i].id).val())
+                },
+                'html'
+            );
+        }
     }
 }
 
-function deleteList(id) {
+function clearQueue() {
     $.post(
-        'ajax/widget/queue.php',
+        'ajax/queue/clear.php',
+        function () {
+            $('#queue').remove();
+        },
+        'html'
+    );
+}
+
+function deleteQueue(id) {
+    $.post(
+        'ajax/queue/delete.php',
         {
             item: id
-        },
-        function (data) {
-
         },
         'html'
     );

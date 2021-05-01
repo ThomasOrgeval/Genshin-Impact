@@ -12,7 +12,7 @@ function addQueue($mail, $item, $level_item, $amount)
 function getQueues($mail): array
 {
     $mail = db()->quote($mail);
-    return db()->query("select id, mail, item, level_item, amount from queue where mail = $mail")->fetchAll();
+    return db()->query("select id, item, level_item, amount from queue where mail = $mail")->fetchAll();
 }
 
 function getQueue($id)
@@ -26,7 +26,7 @@ function getQueue2($mail, $item, $level)
     $mail = db()->quote($mail);
     $item = db()->quote($item);
     $level = db()->quote($level);
-    return db()->query("select id, mail, item, level_item, amount from queue where item = $item and level_item = $level and mail = $mail")->fetch();
+    return db()->query("select id, item, level_item, amount from queue where item = $item and level_item = $level and mail = $mail")->fetch();
 }
 
 function setQueue($id, $amount)
@@ -56,5 +56,27 @@ function existQueueItem($mail, $item, $level): bool
 function existQueue($mail): bool
 {
     $mail = db()->quote($mail);
-    return db()->query("select count(id) from queue where mail like $mail")->rowCount() == 1;
+    return db()->query("select id from queue where mail like $mail")->rowCount() >= 1;
+}
+
+function clearQueue($mail)
+{
+    $mail = db()->quote($mail);
+    db()->query("delete from queue where mail like $mail");
+}
+
+function completeQueue($mail)
+{
+    $mail = db()->quote($mail);
+    return db()->query("select sum(q.amount - ifnull(i.amount, 0) <= 0) as reste from queue q
+        left join inventories i on q.item = i.item and q.level_item = i.level_item 
+        where q.mail like $mail")->fetch()['reste'];
+}
+
+function emptyQueue($mail)
+{
+    $mail = db()->quote($mail);
+    db()->query("update inventories i
+        inner join queue q on q.item = i.item and q.level_item = i.level_item
+        set i.amount = i.amount - q.amount where i.mail like $mail");
 }
