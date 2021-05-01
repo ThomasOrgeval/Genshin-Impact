@@ -9,6 +9,11 @@
     <?php endif; ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="Genshin API">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://genshin.thomasorgeval.fr">
+    <meta property="og:image" content="resources/images/elements/All.png">
+    <!--meta property="og:description" content="Site description"-->
     <title><?= $title ?? 'Genshin Impact API' ?></title>
     <link rel="shortcut icon" type="image" href="resources/images/elements/All.png">
 
