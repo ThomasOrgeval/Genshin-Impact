@@ -120,7 +120,7 @@ function get_stones($element): array
             $var = 'Agnidus Agate';
             break;
         case 'Cryo':
-            $var = 'Vayuda Turquoise';
+            $var = 'Shivada Jade';
             break;
         case 'Hydro':
             $var = 'Varunada Lazurite';
@@ -132,7 +132,7 @@ function get_stones($element): array
             $var = 'Prithiva Topaz';
             break;
         case 'Anemo':
-            $var = 'Shivada Jade';
+            $var = 'Vayuda Turquoise';
             break;
         case 'All':
             $var = 'Brilliant Diamond';
