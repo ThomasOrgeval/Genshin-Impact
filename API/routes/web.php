@@ -14,7 +14,8 @@
 */
 
 $router->get('/', function () use ($router) {
-    return $router->app->version();
+    return view('index');
+    //return $router->app->version();
 });
 
 $router->group(['prefix' => 'api'], function () use ($router) {
@@ -55,8 +56,8 @@ $router->group(['prefix' => 'api'], function () use ($router) {
     $router->get('ascensions',  ['uses' => 'AscensionController@selectAll']);
     $router->get('ascension/{id}', ['uses' => 'AscensionController@select']);
 
-    $router->get('talents',  ['uses' => 'TalentController@selectAll']);
-    $router->get('talent/{id}', ['uses' => 'TalentController@select']);
+    $router->get('talents',  ['uses' => 'TalentsController@selectAll']);
+    $router->get('talent/{id}', ['uses' => 'TalentsController@select']);
 
     $router->get('experiences',  ['uses' => 'ExperienceController@selectAll']);
     $router->get('experience/{id}', ['uses' => 'ExperienceController@select']);

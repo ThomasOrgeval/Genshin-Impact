@@ -50,7 +50,7 @@ create table types
 insert into types (label)
 values ('Flower'),
        ('Mob'),
-       ('Talent'),
+       ('Talents'),
        ('Boss'),
        ('Unique Boss'),
        ('Stone'),

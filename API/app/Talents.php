@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Talent extends Model
+class Talents extends Model
 {
 
     /**

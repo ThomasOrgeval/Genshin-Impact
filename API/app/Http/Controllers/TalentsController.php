@@ -2,20 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Talent;
+use App\Talents;
 use Illuminate\Http\Request;
 
-class TalentController extends Controller
+class TalentsController extends Controller
 {
 
     public function selectAll()
     {
-        return response()->json(Talent::all());
+        return response()->json(Talents::all());
     }
 
     public function select($id)
     {
-        return response()->json(Talent::find($id));
+        return response()->json(Talents::find($id));
     }
 
     public function create(Request $request)
@@ -24,14 +24,14 @@ class TalentController extends Controller
             'label' => 'required|unique:Talents',
         ]);
 
-        $Talent = Talent::create($request->all());
+        $Talent = Talents::create($request->all());
 
         return response()->json($Talent, 201);
     }
 
     public function update($id, Request $request)
     {
-        $Talent = Talent::findOrFail($id);
+        $Talent = Talents::findOrFail($id);
         $Talent->update($request->all());
 
         return response()->json($Talent);
@@ -39,7 +39,7 @@ class TalentController extends Controller
 
     public function delete($id)
     {
-        Talent::findOrFail($id)->delete();
+        Talents::findOrFail($id)->delete();
         return response('Deleted Successfully');
     }
 }
