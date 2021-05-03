@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Weapon extends Model
+class Ascension extends Model
 {
 
     /**
@@ -13,7 +13,7 @@ class Weapon extends Model
      * @var array
      */
     protected $fillable = [
-        'label', 'rarity', 'atk', 'type'
+        'level', 'stone', 'lvl_stone', 'core', 'flower', 'item', 'lvl_item', 'moras', 'xp1', 'xp2', 'xp3'
     ];
 
     /**

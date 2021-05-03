@@ -43,9 +43,21 @@ $router->group(['prefix' => 'api'], function () use ($router) {
     //$router->delete('type/{id}', ['uses' => 'TypeController@delete']);
     //$router->put('type/{id}', ['uses' => 'TypeController@update']);
 
+    $router->get('type_weapons',  ['uses' => 'TypeWeaponController@selectAll']);
+    $router->get('type_weapon/{id}', ['uses' => 'TypeWeaponController@select']);
+    //$router->post('weapon', ['uses' => 'TypeWeaponController@create']);
+    //$router->delete('weapon/{id}', ['uses' => 'TypeWeaponController@delete']);
+    //$router->put('weapon/{id}', ['uses' => 'TypeWeaponController@update']);
+
     $router->get('weapons',  ['uses' => 'WeaponController@selectAll']);
     $router->get('weapon/{id}', ['uses' => 'WeaponController@select']);
-    //$router->post('weapon', ['uses' => 'WeaponController@create']);
-    //$router->delete('weapon/{id}', ['uses' => 'WeaponController@delete']);
-    //$router->put('weapon/{id}', ['uses' => 'WeaponController@update']);
+
+    $router->get('ascensions',  ['uses' => 'AscensionController@selectAll']);
+    $router->get('ascension/{id}', ['uses' => 'AscensionController@select']);
+
+    $router->get('talents',  ['uses' => 'TalentController@selectAll']);
+    $router->get('talent/{id}', ['uses' => 'TalentController@select']);
+
+    $router->get('experiences',  ['uses' => 'ExperienceController@selectAll']);
+    $router->get('experience/{id}', ['uses' => 'ExperienceController@select']);
 });
