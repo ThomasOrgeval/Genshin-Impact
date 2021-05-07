@@ -8,7 +8,7 @@ ob_start(); ?>
                     for ($i = 1; $i <= $item['rarity_max']; $i++) : ?>
                         <div class="text-center">
                             <img class="item-item" alt="<?= $item['id'] ?>"
-                                 src="resources/images/items/<?= slug($item['label'] . $i) ?>.png">
+                                 src="resources/images/items/md/<?= slug($item['label'] . $i) ?>.png">
                             <div class="form-outline">
                                 <input id="<?= $item['id'] . '_' . $i ?>" class="form-control text-center text-white-50"
                                        type="number" value="<?= getValue($item['id'], $i) ?>">

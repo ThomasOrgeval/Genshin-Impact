@@ -15,7 +15,7 @@
     <meta property="og:image" content="https://genshin.thomasorgeval.fr/resources/images/elements/All.png">
     <!--meta property="og:description" content="Site description"-->
     <title><?= $title ?? 'Genshin Impact API' ?></title>
-    <link rel="shortcut icon" type="image" href="resources/images/elements/All.png">
+    <link rel="shortcut icon" type="image" href="resources/images/elements/sm/All.png">
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
