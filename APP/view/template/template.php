@@ -12,7 +12,7 @@
     <meta property="og:title" content="Genshin API">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://genshin.thomasorgeval.fr">
-    <meta property="og:image" content="https://genshin.thomasorgeval.fr/resources/images/elements/All.png">
+    <meta property="og:image" content="https://genshin.thomasorgeval.fr/resources/images/elements/sm/All.png">
     <!--meta property="og:description" content="Site description"-->
     <title><?= $title ?? 'Genshin Impact API' ?></title>
     <link rel="shortcut icon" type="image" href="resources/images/elements/sm/All.png">
@@ -82,7 +82,7 @@
                                     <hr class="m-0">
                                     <?php foreach ($_POST['queue'] as $item) : ?>
                                         <li class="d-flex faded-dark" style="height: 50px">
-                                            <img src="resources/images/items/<?= slug(getItem($item['item'])['label']) . $item['level_item'] ?>.png"
+                                            <img src="resources/images/items/sm/<?= slug(getItem($item['item'])['label']) . $item['level_item'] ?>.png"
                                                  alt="item" style="height: 50px">
                                             <div class="row w-100 my-auto">
                                                 <span class="col text-center text-white-50"><?= $item['amount'] ?></span>
@@ -233,10 +233,6 @@
 <!-- MDB -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/1.4.0/perfect-scrollbar.min.js"></script>
-<!-- Axios -->
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<!-- JS Cookie -->
-<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
 
 <script src="resources/script.js"></script>
 </html>

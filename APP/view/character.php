@@ -84,7 +84,7 @@ ob_start(); ?>
                                         <div class="row my-2">
                                             <div class="col-4 col-md-3 col-lg-2 div-item">
                                                 <img class="item-char" alt=""
-                                                     src="resources/images/items/<?= slug($stone['label']) . $i ?>.png">
+                                                     src="resources/images/items/md/<?= slug($stone['label']) . $i ?>.png">
                                             </div>
                                             <div class="col-md-3 col-lg-4 align-middle text-center d-none d-md-block text-white-50"
                                                  style="margin-top: 32px"><?= $stone['label'] . ' ' . $i ?></div>
@@ -111,7 +111,7 @@ ob_start(); ?>
                                         <div class="row my-2">
                                             <div class="col-4 col-md-3 col-lg-2 div-item">
                                                 <img class="item-char" alt=""
-                                                     src="resources/images/items/<?= slug($_POST['lvl' . $i]) . $j ?>.png">
+                                                     src="resources/images/items/md/<?= slug($_POST['lvl' . $i]) . $j ?>.png">
                                             </div>
                                             <div class="col-md-3 col-lg-4 align-middle text-center d-none d-md-block text-white-50"
                                                  style="margin-top: 32px"><?= $_POST['lvl' . $i] . ' ' . $j ?></div>
@@ -136,7 +136,7 @@ ob_start(); ?>
 
                                 <div class="row my-2">
                                     <div class="col-4 col-md-3 col-lg-2 div-item">
-                                        <img class="item-char" alt="" src="resources/images/items/Wanderers-Advice.png">
+                                        <img class="item-char" alt="" src="resources/images/items/md/Wanderers-Advice.png">
                                     </div>
                                     <div class="col-md-3 col-lg-4 align-middle text-center d-none d-md-block text-white-50"
                                          style="margin-top: 32px">Wanderer's Advice
@@ -155,7 +155,7 @@ ob_start(); ?>
                                 <div class="row my-2">
                                     <div class="col-4 col-md-3 col-lg-2 div-item">
                                         <img class="item-char" alt=""
-                                             src="resources/images/items/Adventurers-Experience.png">
+                                             src="resources/images/items/md/Adventurers-Experience.png">
                                     </div>
                                     <div class="col-md-3 col-lg-4 align-middle text-center d-none d-md-block text-white-50"
                                          style="margin-top: 32px">Adventurer's Experience
@@ -173,7 +173,7 @@ ob_start(); ?>
                                 </div>
                                 <div class="row my-2">
                                     <div class="col-4 col-md-3 col-lg-2 div-item">
-                                        <img class="item-char" alt="" src="resources/images/items/Heros-Wit.png">
+                                        <img class="item-char" alt="" src="resources/images/items/md/Heros-Wit.png">
                                     </div>
                                     <div class="col-md-3 col-lg-4 align-middle text-center d-none d-md-block text-white-50"
                                          style="margin-top: 32px">Hero's Wit
@@ -192,7 +192,7 @@ ob_start(); ?>
                                 <hr class="my-2">
                                 <div class="row my-2">
                                     <div class="col-4 col-md-3 col-lg-2 div-item">
-                                        <img class="item-char" alt="" src="resources/images/items/Moras1.png">
+                                        <img class="item-char" alt="" src="resources/images/items/md/Moras1.png">
                                     </div>
                                     <div class="col-md-3 col-lg-4 align-middle text-center d-none d-md-block text-white-50"
                                          style="margin-top: 32px">Moras
@@ -269,7 +269,7 @@ ob_start(); ?>
                                         <div class="row my-2">
                                             <div class="col-4 col-md-3 col-lg-2 div-item">
                                                 <img class="item-char" alt=""
-                                                     src="resources/images/items/<?= slug($_POST['tal' . $i]) . $j ?>.png">
+                                                     src="resources/images/items/md/<?= slug($_POST['tal' . $i]) . $j ?>.png">
                                             </div>
                                             <div class="col-md-3 col-lg-4 align-middle text-center d-none d-md-block text-white-50"
                                                  style="margin-top: 32px"><?= $_POST['tal' . $i] . ' ' . $j ?></div>
@@ -293,7 +293,7 @@ ob_start(); ?>
 
                                 <div class="row my-2">
                                     <div class="col-4 col-md-3 col-lg-2 div-item">
-                                        <img class="item-char" alt="" src="resources/images/items/Moras1.png">
+                                        <img class="item-char" alt="" src="resources/images/items/md/Moras1.png">
                                     </div>
                                     <div class="col-md-3 col-lg-4 align-middle text-center d-none d-md-block text-white-50"
                                          style="margin-top: 32px">Moras
@@ -312,7 +312,7 @@ ob_start(); ?>
                                 <div class="row my-2">
                                     <div class="col-4 col-md-3 col-lg-2 div-item">
                                         <img class="item-char" alt=""
-                                             src="resources/images/items/Crown-of-Insight1.png">
+                                             src="resources/images/items/md/Crown-of-Insight1.png">
                                     </div>
                                     <div class="col-md-3 col-lg-4 align-middle text-center d-none d-md-block text-white-50"
                                          style="margin-top: 32px">Crown of Insight
