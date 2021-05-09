@@ -1,0 +1,6 @@
+User-Agent: *
+Sitemap: https://genshin.thomasorgeval.fr/sitemap.xml
+Allow: /*
+Dissalow: /controller/
+Dissalow: /model/
+Dissalow: /ajax/
