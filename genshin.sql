@@ -2,7 +2,7 @@ drop database if exists genshin;
 create database genshin character set UTF8;
 use genshin;
 
-drop table user, ascensions, talents, inventories, queue, characters, weapons, elements, type_weapons, experiences, items, types;
+drop table if exists user, ascensions, talents, inventories, queue, characters, weapons, elements, type_weapons, experiences, items, types;
 create table elements
 (
     id         int auto_increment not null,
