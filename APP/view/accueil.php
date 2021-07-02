@@ -13,7 +13,7 @@ ob_start(); ?>
                         <div class="card-body">
                             <div class="justify-content-between d-flex">
                                 <h3 class="card-title character_name text-white-50"><?= $character['label'] ?></h3>
-                                <div>
+                                <div style="white-space: nowrap">
                                     <img src="resources/images/weapons/<?= $character['weapon'] ?>.png"
                                          class="element ms-auto" alt="weapon">
                                     <img src="resources/images/elements/sm/<?= $character['element'] ?>.png"

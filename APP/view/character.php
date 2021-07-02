@@ -4,7 +4,7 @@ ob_start(); ?>
     <div id="character" class="shadow">
         <div id="<?= $_GET['label'] ?>" class="card bg-dark">
             <div class="bg-image p-5 p-lg-5 text-center shadow-1-strong"
-                 style="background-image: url('resources/images/characters/<?= $_GET['label'] ?>')">
+                 style="background-image: url('resources/images/characters/<?= $_GET['label'] ?>');">
                 <ul class="nav nav-pills flex-column flex-lg-row mb-3 col-6" id="ex1" role="tablist">
                     <li class="nav-item" role="presentation">
                         <a class="nav-link active" id="ex1-tab-1" data-mdb-toggle="pill" href="#ex1-pills-1"
