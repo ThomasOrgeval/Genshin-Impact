@@ -135,7 +135,11 @@ values ('Cecilia', 1, 1),
        ('xp', 7, 3),
        ('Noctilucous Jade', 1, 1),
        ('Marionette Core', 4, 1),
-       ('Sea-Ganoderma', 1, 1);
+       ('Sea-Ganoderma', 1, 1),
+       ('Perpetual Heart', 4, 1),
+       ('Sakura Bloom', 1, 1),
+       ('Old Handguard', 2, 3),
+       ('Elegance', 3, 3);
 
 create table characters
 (
@@ -198,7 +202,8 @@ values ('Ganyu', 5, 5, 5, 27, 7, 22, 36, 22, 47, now(), now()),
        ('Lumine', 8, 1, 5, 56, 9, 15, 32, 18, 44, now(), now()),
        ('Aether', 8, 1, 5, 56, 9, 15, 32, 18, 44, now(), now()),
        ('Yanfei', 6, 3, 4, 30, 65, 16, 37, 16, 49, now(), now()),
-       ('Kaedehara Kazuha', 2, 1, 5, 66, 67, 16, 36, 16, 50, now(), now());
+       ('Kaedehara Kazuha', 2, 1, 5, 66, 67, 16, 36, 16, 50, now(), now()),
+       ('Ayaka', 5, 1, 5, 68, 69, 70, 71, 70, 49, now(), now());
 
 create table experiences
 (
