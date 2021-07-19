@@ -101,6 +101,13 @@
                             </div>
                         </li>
                     <?php endif;
+                    if (isAdmin($_SESSION['Account']['id'])) : ?>
+                        <li class="nav-item me-3 me-lg-0">
+                            <a class="nav-link" href="admin" rel="nofollow">
+                                <i class="fas fa-users-cog"></i>
+                            </a>
+                        </li>
+                    <?php endif;
 
                 else : ?>
                     <li class="nav-item me-3 me-lg-0">

@@ -4,6 +4,7 @@ mb_internal_encoding("UTF-8");
 session_start();
 
 require __DIR__ . '/controller/main.php';
+require __DIR__ . '/controller/admin.php';
 require __DIR__ . '/controller/libs/flash.php';
 
 try {
@@ -32,6 +33,12 @@ try {
                 break;
             case 'queue_complete':
                 queue_complete();
+                break;
+            case 'admin':
+                admin();
+                break;
+            case 'edit_character':
+                edit_character();
                 break;
         }
     } else home();

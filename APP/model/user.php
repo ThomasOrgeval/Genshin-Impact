@@ -23,3 +23,9 @@ function getUser($mail, $pass)
         return $user;
     } else return false;
 }
+
+function isAdmin($id): int
+{
+    $id = db()->quote($id);
+    return db()->query("select admin from user where id = $id and admin = 1")->rowCount();
+}

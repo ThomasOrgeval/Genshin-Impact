@@ -11,9 +11,12 @@ RewriteCond %{HTTP_HOST} ^genshin.thomasorgeval\.fr [NC]
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI}
 
-RewriteRule accueil$ index.php
-RewriteRule character/([a-zA-Z0-9-]+)$ index.php?p=character&label=$1
-RewriteRule resource$ index.php?p=resources
-RewriteRule home$ index.php?p=home
-RewriteRule queue$ index.php?p=queue
-RewriteRule queue_complete$ index.php?p=queue_complete
+RewriteRule ^accueil$ index.php
+RewriteRule ^character/([a-zA-Z0-9-]+)$ index.php?p=character&label=$1
+RewriteRule ^resource$ index.php?p=resources
+RewriteRule ^home$ index.php?p=home
+RewriteRule ^queue$ index.php?p=queue
+RewriteRule ^queue_complete$ index.php?p=queue_complete
+
+RewriteRule ^admin$ index.php?p=admin
+RewriteRule ^edit_character/([0-9]+)$ index.php?p=edit_character&id=$1

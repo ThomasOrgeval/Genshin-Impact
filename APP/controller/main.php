@@ -8,7 +8,7 @@ function home()
     if (isset($_SESSION['Account']['mail']) && existQueue($_SESSION['Account']['mail'])) {
         $_POST['queue'] = getQueues($_SESSION['Account']['mail']);
     }
-    require __DIR__ . '/../view/accueil.php';
+    require __DIR__ . '/../view/home.php';
 }
 
 function character()
@@ -67,7 +67,7 @@ function signIn()
     if ($_SESSION['Account'] = getUser(secure($_POST['mail']), $_POST['pass'])) setFlash('Sign in!');
     else {
         setFlash('Bad request :(', 'danger');
-        unset($_SESSION);
+        $_SESSION['Account'] = null;
     }
     header('Location:home');
 }

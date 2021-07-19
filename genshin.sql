@@ -271,13 +271,14 @@ create table user
     pseudo varchar(60)        not null,
     mail   varchar(255)       not null,
     pass   varchar(100)       not null,
+    admin  bool default 0,
     primary key (id)
 ) engine = InnoDB;
 create index mail on user (mail);
 
 insert into user
     value (1, 'Raiwtsu', 'orgevalthomas@gmail.com',
-           '$2y$10$3ncvKqst/S4s4WVLqEPwN.sjYgXZ0lC..Ozy8BuzgbGVmxlIY6aKq');
+           '$2y$10$3ncvKqst/S4s4WVLqEPwN.sjYgXZ0lC..Ozy8BuzgbGVmxlIY6aKq', 1);
 
 create table inventories
 (
