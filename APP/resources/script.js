@@ -4,20 +4,26 @@ $(document).ready(function ($) {
         costTalent($('#talent_min').val(), $('#talent_max').val());
     }
 
-    $('#level_min').change(function () {
+    $('#level_min, #level_max').change(function () {
         costAscension($('#level_min').val(), $('#level_max').val());
     });
 
-    $('#level_max').change(function () {
-        costAscension($('#level_min').val(), $('#level_max').val());
-    });
-
-    $('#talent_min').change(function () {
+    $('#talent_min, #talent_max').change(function () {
         costTalent($('#talent_min').val(), $('#talent_max').val());
     });
 
-    $('#talent_max').change(function () {
-        costTalent($('#talent_min').val(), $('#talent_max').val());
+    $('#base_atk, #add_atk, #crit_dmg, #crit_rate').change(function() {
+        let rate = $('#crit_rate').val() / 100;
+        if (rate > 1) rate = 1;
+
+        let normal_dmg = parseInt($('#base_atk').val()) + parseInt($('#add_atk').val());
+        let crit_dmg = normal_dmg * (1 + $('#crit_dmg').val() / 100);
+        let aver = rate * crit_dmg + (1 - rate) * normal_dmg;
+
+        console.log(normal_dmg, crit_dmg, aver);
+        $('#val_non_crit').html(parseInt(normal_dmg));
+        $('#val_crit').html(parseInt(crit_dmg));
+        $('#val_aver').html(parseInt(aver));
     });
 
     $('input').change(function (e) {

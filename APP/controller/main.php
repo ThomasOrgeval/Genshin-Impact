@@ -169,3 +169,8 @@ function get_stones($element): array
     }
     return getStones($var);
 }
+
+function damage()
+{
+    require __DIR__ . '/../view/damage.php';
+}

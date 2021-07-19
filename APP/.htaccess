@@ -15,5 +15,6 @@ RewriteRule accueil$ index.php
 RewriteRule character/([a-zA-Z0-9-]+)$ index.php?p=character&label=$1
 RewriteRule resource$ index.php?p=resources
 RewriteRule home$ index.php?p=home
+RewriteRule damage$ index.php?p=damage
 RewriteRule queue$ index.php?p=queue
 RewriteRule queue_complete$ index.php?p=queue_complete

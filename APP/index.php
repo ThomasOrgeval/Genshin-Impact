@@ -33,6 +33,9 @@ try {
             case 'queue_complete':
                 queue_complete();
                 break;
+            case 'damage':
+                damage();
+                break;
         }
     } else home();
 } catch (Exception $e) {

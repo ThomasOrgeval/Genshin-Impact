@@ -22,18 +22,13 @@
     <title><?= $title ?? 'Genshin Impact API' ?></title>
     <link rel="shortcut icon" type="image" href="resources/images/elements/sm/All.png">
 
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <!-- MDB -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.css" rel="stylesheet">
 
-    <!--link href="resources/style/black.css" rel="stylesheet"-->
+    <link href="resources/style/black.css" rel="stylesheet">
     <link href="resources/style.css" rel="stylesheet">
 
     <!-- jQuery -->
@@ -56,6 +51,7 @@
                 <?php if (isset($_SESSION['Account'])) : ?>
                     <li class="nav-item"><a class="nav-link" href="resource">My resources</a></li>
                 <?php endif; ?>
+                <li class="nav-item"><a class="nav-link" href="damage"><i class="fas fa-calculator"></i></a></li>
             </ul>
 
             <ul class="navbar-nav d-flex flex-row">
@@ -229,13 +225,6 @@
     <!-- Copyright -->
 </footer>
 
-<!-- Bootstrap -->
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"
-        integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG"
-        crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"
-        integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc"
-        crossorigin="anonymous"></script>
 <!-- MDB -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/1.4.0/perfect-scrollbar.min.js"></script>
