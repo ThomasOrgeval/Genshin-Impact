@@ -1,4 +1,6 @@
 */.idea/
 */vendor/
-APP/model/env.json
+OLD/model/env.json
 /.idea/
+/OLD/public/css/
+/OLD/public/js/
