@@ -4,16 +4,6 @@ for (const dropdown of document.querySelectorAll(".custom-select-wrapper")) {
     })
 }
 
-for (const option of document.querySelectorAll(".custom-option")) {
-    option.addEventListener('click', function () {
-        if (!this.classList.contains('selected')) {
-            if (this.parentNode.querySelector('.custom-option.selected'))
-                this.parentNode.querySelector('.custom-option.selected').classList.remove('selected');
-            this.classList.add('selected');
-            this.closest('.custom-select').querySelector('.custom-select__trigger div').innerHTML = this.innerHTML;
-        }
-    })
-}
 window.addEventListener('click', function (e) {
     for (const select of document.querySelectorAll('.custom-select')) {
         if (!select.contains(e.target)) {

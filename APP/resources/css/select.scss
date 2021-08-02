@@ -1,24 +1,22 @@
 $arrow-color: #3d5e96;
-$selected: #838383;
-$bg: #4B4B4BFF;
+$selected: #313131;
+$bg: #242424;
 
 .custom-select-wrapper {
     position: relative;
     user-select: none;
     width: 100%;
+    border-radius: 50px;
+    border: 1px solid #bdbdbd;
 }
 
 .custom-select {
-    position: relative;
     display: flex;
     flex-direction: column;
-    border-width: 0 2px 0 2px;
-    border-style: solid;
-    border-color: #394a6d;
+    border-radius: 50px;
 }
 
 .custom-select__trigger {
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -28,11 +26,8 @@ $bg: #4B4B4BFF;
     color: #ffffff;
     height: 60px;
     line-height: 60px;
-    background: $bg;
     cursor: pointer;
-    border-width: 2px 0 2px 0;
-    border-style: solid;
-    border-color: #394a6d;
+    border-radius: 50px;
 }
 
 .custom-options {
@@ -41,8 +36,7 @@ $bg: #4B4B4BFF;
     top: 100%;
     left: 0;
     right: 0;
-    border: 2px solid #394a6d;
-    border-top: 0;
+    border: 1px solid #394a6d;
     background: $bg;
     transition: all 0.5s;
     opacity: 0;
@@ -75,7 +69,6 @@ $bg: #4B4B4BFF;
 }
 
 .custom-option.selected {
-    color: #FFFFFF;
     background-color: $selected;
 }
 

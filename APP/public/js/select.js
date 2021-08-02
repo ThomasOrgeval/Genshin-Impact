@@ -25,42 +25,22 @@ try {
   _iterator.f();
 }
 
-var _iterator2 = _createForOfIteratorHelper(document.querySelectorAll(".custom-option")),
-    _step2;
-
-try {
-  for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
-    var option = _step2.value;
-    option.addEventListener('click', function () {
-      if (!this.classList.contains('selected')) {
-        if (this.parentNode.querySelector('.custom-option.selected')) this.parentNode.querySelector('.custom-option.selected').classList.remove('selected');
-        this.classList.add('selected');
-        this.closest('.custom-select').querySelector('.custom-select__trigger div').innerHTML = this.innerHTML;
-      }
-    });
-  }
-} catch (err) {
-  _iterator2.e(err);
-} finally {
-  _iterator2.f();
-}
-
 window.addEventListener('click', function (e) {
-  var _iterator3 = _createForOfIteratorHelper(document.querySelectorAll('.custom-select')),
-      _step3;
+  var _iterator2 = _createForOfIteratorHelper(document.querySelectorAll('.custom-select')),
+      _step2;
 
   try {
-    for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
-      var select = _step3.value;
+    for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+      var select = _step2.value;
 
       if (!select.contains(e.target)) {
         select.classList.remove('open');
       }
     }
   } catch (err) {
-    _iterator3.e(err);
+    _iterator2.e(err);
   } finally {
-    _iterator3.f();
+    _iterator2.f();
   }
 });
 /******/ })()

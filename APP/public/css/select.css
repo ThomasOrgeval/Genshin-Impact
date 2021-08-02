@@ -5,19 +5,17 @@
       -ms-user-select: none;
           user-select: none;
   width: 100%;
+  border-radius: 50px;
+  border: 1px solid #bdbdbd;
 }
 
 .custom-select {
-  position: relative;
   display: flex;
   flex-direction: column;
-  border-width: 0 2px 0 2px;
-  border-style: solid;
-  border-color: #394a6d;
+  border-radius: 50px;
 }
 
 .custom-select__trigger {
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -27,11 +25,8 @@
   color: #ffffff;
   height: 60px;
   line-height: 60px;
-  background: #4B4B4BFF;
   cursor: pointer;
-  border-width: 2px 0 2px 0;
-  border-style: solid;
-  border-color: #394a6d;
+  border-radius: 50px;
 }
 
 .custom-options {
@@ -40,9 +35,8 @@
   top: 100%;
   left: 0;
   right: 0;
-  border: 2px solid #394a6d;
-  border-top: 0;
-  background: #4B4B4BFF;
+  border: 1px solid #394a6d;
+  background: #242424;
   transition: all 0.5s;
   opacity: 0;
   visibility: hidden;
@@ -74,8 +68,7 @@
 }
 
 .custom-option.selected {
-  color: #FFFFFF;
-  background-color: #838383;
+  background-color: #313131;
 }
 
 .arrow {

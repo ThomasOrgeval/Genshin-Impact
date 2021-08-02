@@ -2,6 +2,10 @@
     width: 0;
 }
 
+body {
+    color: white;
+}
+
 #content {
     margin-top: 80px;
     margin-bottom: 22px;
@@ -45,6 +49,12 @@
 
 .faded-dark {
     background-color: rgba(0, 0, 0, 0.4);
+}
+
+.img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 @media (max-width: 1360px) {

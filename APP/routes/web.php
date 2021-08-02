@@ -28,7 +28,13 @@ Route::group(['prefix' => 'tools', 'as' => 'tools'], function () {
 });
 
 Route::get('/character/{label}', [CharacterController::class, 'index'])
-    ->where('label', '[A-Za-z0-9]*')
+    ->where('label', '[A-Za-z0-9-]*')
     ->name('character');
 
 Route::get('/resources', [IndexController::class, 'resources'])->name('resources');
+
+Route::group(['prefix' => 'ajax', 'as' => 'ajax'], function () {
+   Route::post('/ascension', [ToolsController::class, 'ajaxCharacter'])->name('.char-asc');
+   Route::post('/talent', [ToolsController::class, 'ajaxTalent'])->name('.char-tal');
+   Route::post('/select', [ToolsController::class, 'ajaxSelect'])->name('.char-select');
+});

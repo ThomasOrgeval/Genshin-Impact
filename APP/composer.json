@@ -12,7 +12,8 @@
         "laracasts/flash": "^3.2",
         "laravel/framework": "^8.40",
         "laravel/tinker": "^2.5",
-        "reliese/laravel": "^1.1"
+        "reliese/laravel": "^1.1",
+      "ext-json": "*"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
