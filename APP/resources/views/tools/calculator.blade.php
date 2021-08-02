@@ -51,7 +51,7 @@
 
                             $.each(response, function (index, item) {
                                 $('#' + index + ' td:first-child').empty()
-                                    .append('<img src="{{ asset('images/items') }}/' + item + '.png" alt="' + item + '" width=30 height=30>')
+                                    .append('<img src="{{ asset('images/items') }}/' + item.replaceAll(' ', '-') + '.png" alt="' + item + '" width=30 height=30>')
                             });
                             costAscension($('#level_min option[selected]').val(), $('#level_max option[selected]').val());
                             costTalent($('#talent_min1 option[selected]').val(), $('#talent_max1 option[selected]').val(),
